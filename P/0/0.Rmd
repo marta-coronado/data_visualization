@@ -18,7 +18,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 # Animations: https://github.com/daneden/animate.css#animations
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE, dpi = 300,  fig.retina = 3)
 
 library(ggplot2)
 library(lattice)
