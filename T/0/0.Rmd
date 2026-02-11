@@ -18,7 +18,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 # Animations: https://github.com/daneden/animate.css#animations
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE, warning = F, dpi = 300,  fig.retina = 3)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE, warning = F,  fig.retina = 3)
 # Package for slides
 # remotes::install_github('yihui/xaringan')
 
@@ -367,7 +367,7 @@ When we talk about global temperature, a change of 1–2 °C is very significant
 ---
 class: animated, fadeIn
 
-### <i>“Above all, show the data”: double-axis
+## <i>“Above all, show the data”: double-axis
 
 ```{r  echo=F, eval=T, fig.height=6, fig.width=7}
 library(scales)
@@ -413,7 +413,7 @@ Is the GDP of the US equal to the global GDP?
 ---
 class: animated, fadeIn
 
-### <i>“Above all, show the data”: double-axis
+## <i>“Above all, show the data”: double-axis
 
 ```{r  echo=F, eval=T, fig.height=6, fig.width=14}
 
@@ -480,7 +480,7 @@ Data with the same units of measurement are better displayed using **the same sc
 ---
 class: animated, fadeIn
 
-### <i>“Above all, show the data”: double-axis</i>
+## <i>“Above all, show the data”: double-axis</i>
 
 <center>
 <img src="img/nicolas.png"  width = 60%>
