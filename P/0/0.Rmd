@@ -705,7 +705,9 @@ class: animated, fadeIn
 # Today's task
 
 1. Make sure **RStudio** is working
+
 2. Make groups of 3-4 people and fill the form at ATENeA
+
 3. Install some packages you will need for this practical sessions:
 
   + `ggplot2`
@@ -798,8 +800,6 @@ dim(data)
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: describe a data set
 
 Indicate the data type of each variable.
@@ -811,8 +811,6 @@ str(data)
 
 ---
 class: animated, fadeIn
-
-# Today's task
 
 ## Exercise: describe a data set
 
@@ -836,8 +834,6 @@ dim(data)
 ---
 
 class: animated, fadeIn
-
-# Today's task
 
 ## Exercise: describe a data set
 
