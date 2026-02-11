@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title> </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/rutgers.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.0/css/all.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# <br>
+]
+.author[
+### 
+]
+
+---
+
+
+
+class: center, middle, animated, bounceInDown
+
+
+
+## Keep in touch
+
+#### Theory lessons &lt;br&gt;
+
+| Marta Coronado Zamora | Jose F. Sánchez | 
+|:-:|:-:|
+| &lt;a href="mailto:Marta.coronado@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; marta.coronado@uab.cat&lt;/a&gt; | &lt;a href="mailto:JoseFrancisco.Sanchez@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; josefrancisco.sanchez@uab.cat&lt;/a&gt; | 
+| &lt;a href="https://bsky.app/profile/geneticament.bsky.social"&gt;&lt;i class="fab fa-bluesky fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @geneticament&lt;/a&gt; |                 &lt;a href="https://twitter.com/JFSanchezBioinf"&gt;&lt;i class="fab fa-twitter fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @JFSanchezBioinf&lt;/a&gt; |
+| &lt;a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Universitat Autònoma de Barcelona &lt;/a&gt; |    &lt;a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"&gt; &lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;Germans Trias i Pujol Research Institute (IGTP)&lt;/a&gt; |
+
+#### Practical lessons &lt;br&gt;
+
+| Miriam Merenciano |
+|:-:|
+| &lt;a href="mailto:miriam.merenciano@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; miriam.merenciano@uab.cat &lt;/a&gt; | 
+|  &lt;a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Universitat Autònoma de Barcelona &lt;/a&gt; |
+
+&lt;style&gt;
+.title-slide {
+  background-image: url('img/1.png');
+  background-size: 100%;
+}
+&lt;/style&gt;
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+# Essential principles
+
+- **Data visualization** is the **graphical representation** of **data**
+- The main goal is **communicating information clearly** and **effectively**
+- Both **aesthetic form** and **functionality** need to go hand in hand
+
+
+&lt;center&gt;
+&lt;img src="img/dataviz2019_11_4D10_30_45.png" align="middle" width="35%" margin="0 auto" /&gt;
+&lt;br&gt;
+&lt;i&gt;Data insights: a visualization (Aisch 2019)&lt;/i&gt;
+&lt;/center&gt;
+
+---
+## Graphical integrity — Edward Tufte (1942-)
+
+.pull-left[
+These are Tufte’s 6 principles:
+
+1. **Comparisons**:  show comparisons to depict contrasts and differences
+
+2. **Causality**:  demonstrate how one or more independent variables impact or influence dependent variables
+
+3. **Multivariate**: combine various data
+
+4. **Integration**:  incorporate various modes of information 
+
+5. **Documentation**:  include attribution, detailed titles, and measurements (scales)
+
+6. **Context**: describe the before and after state
+]
+
+.pull-right[
+&lt;img src="img/books_tufte.png" width=95%&gt;
+]
+
+---
+## &lt;i&gt;“Above all, show the data”&lt;/i&gt; 
+
+| **__Chartjunk__** | **__Excellence__** | 
+|:-:|:-:|
+| Excessive and unnecessary use of graphical effects in graphs | Communication of complex ideas with clarity, precision and efficiency | 
+
+--
+&lt;br&gt;
+&lt;center&gt;
+&lt;img src="img/ch-01-chartjunk-life-expectancy2020_9_22D12_40_12.png" align="middle" width="40%" margin="0 auto" /&gt;
+&lt;br&gt;
+A chart with a considerable amount of junk in it.&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; &lt;b&gt;What problems do you identify in this figure?&lt;/b&gt;
+&lt;/center&gt;
+
+---
+
+### &lt;i&gt;"The best statistical graphic ever drawn"&lt;/i&gt;
+
+&lt;center&gt;
+&lt;img src="img/Minard2020_9_22D12_40_47.png" align="middle" width="85%" margin="0 auto" /&gt;
+
+The graphic is notable for its representation in two dimensions of six types of data: the number of Napoleon's troops; distance; temperature; the latitude and longitude; direction of travel; and location relative to specific dates. &lt;a src="https://en.wikipedia.org/wiki/Charles_Joseph_Minard"&gt;Wikipedia&lt;/a&gt;.
+
+---
+## &lt;i&gt;“Above all, show the data”:  Fair axis limits&lt;/i&gt; 
+
+Bar char by the German economic development agency GTAI. &lt;a src="https://www.gtai.de/GTAI/Navigation/EN/invest,t=motivated-and-dependable-employees,did=214428.html"&gt;German labor market&lt;/a&gt;.
+
+
+&lt;img src="0_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## &lt;i&gt;“Above all, show the data”:  Fair axis limits&lt;/i&gt; 
+
+
+&lt;img src="0_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+
+**The size of this gap is an illusion.**
+
+
+&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt; Bars in a **bar chart** should (almost) always **extend to zero** (absolute magnitude of values). Not necessary for **line chars** (change in the dependent variable as the independent value changes).
+
+
+
+
+---
+
+
+## &lt;i&gt;“Above all, show the data”:  Fair axis limits&lt;/i&gt; 
+
+
+.pull-left[
+
+&lt;img src="img/stand_your_ground2020_9_22D12_42_34.png" width = 80%&gt;
+
+]
+
+--
+
+.pull-right[
+- Immediate visual impression that gun deaths declined sharply after stand-your-ground legislation was enacted in Florida
+- **The decline is an illusion**
+]
+
+
+---
+class: animated, fadeIn
+
+## &lt;i&gt;“Above all, show the data”:  Fair axis limits&lt;/i&gt; 
+
+![](0_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+---
+
+## &lt;i&gt;“Above all, show the data”:  Fair axis limits&lt;/i&gt; 
+
+![](0_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+When we talk about global temperature, a change of 1–2 °C is very significant.&lt;br&gt;
+&lt;small&gt;&lt;a href="https://doi.org/10.1126/science.abn7950"&gt;Armstrong McKay, David I. (2022). "Exceeding 1.5°C global warming could trigger multiple climate tipping points". Science. 377 (6611): eabn7950&lt;/a&gt;.&lt;/small&gt;
+
+---
+class: animated, fadeIn
+
+### &lt;i&gt;“Above all, show the data”: double-axis
+
+![](0_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+Is the GDP of the US equal to the global GDP?
+
+---
+class: animated, fadeIn
+
+### &lt;i&gt;“Above all, show the data”: double-axis
+
+![](0_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+Data with the same units of measurement are better displayed using **the same scale** on a single axis.
+
+---
+class: animated, fadeIn
+
+### &lt;i&gt;“Above all, show the data”: double-axis&lt;/i&gt;
+
+&lt;center&gt;
+&lt;img src="img/nicolas.png"  width = 60%&gt;
+&lt;br&gt;
+
+Spurious correlations (&lt;a href="https://tylervigen.com/spurious-correlations"&gt;link&lt;/a&gt;).
+&lt;/center&gt;
+
+When dealing with dual axes with two different units of measurement, in most cases it is preferable to use two separate plots rather than a plot with a double axis.
+
+
+---
+## &lt;i&gt;“Above all, show the data”&lt;/i&gt; 
+- Fair axis limits
+- Encourage the eye to compare values
+- Label important parts, axes, units, legends, captions
+
+---
+## &lt;i&gt;“Above all, show the data”&lt;/i&gt; 
+- Fair axis limits
+- Encourage the eye to compare values
+- Label important parts, axes, units, legends, captions
+- Consider interactive visualizations (&lt;a src="https://plotly.com/"&gt;plotly&lt;/a&gt;, &lt;a src="https://ggvis.rstudio.com/"&gt;ggvis&lt;/a&gt;, &lt;a src="https://ramnathv.github.io/rCharts/"&gt;rCharts&lt;/a&gt;, &lt;a src="https://ggvis.rstudio.com/"&gt;ggvis&lt;/a&gt;, &lt;a src="https://shiny.rstudio.com/"&gt;shiny&lt;/a&gt;)
+
+---
+
+## Maximize the data-ink ratio
+
+$$ Data-ink\;ratio=\;\frac{Data-ink}{Total\;ink\;in\;graphic}  $$
+--
+
+&lt;center&gt;
+&lt;img src="img/data2ink22020_9_22D12_44_16.jpg" align="middle" width="65%" margin="0 auto" /&gt;
+
+
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Which graph has higher data-ink ratio?&lt;/b&gt;
+
+---
+
+## Maximize the data-ink ratio
+
+$$ Data-ink\;ratio=\;\frac{Data-ink}{Total\;ink\;in\;graphic}  $$
+
+&lt;center&gt;
+&lt;img src="img/data2ink2020_9_22D12_44_46.jpg" align="middle" width="65%" margin="0 auto" /&gt;
+
+
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Which graph has higher data-ink ratio?&lt;/b&gt;
+
+--
+
+As a general principle, **increase the data-ink ratio to the maximum** that is possible in your graph.
+
+---
+### Erase non data-ink
+
+&lt;center&gt;
+&lt;img src="img/monster-1040x7392020_9_22D12_45_17.jpg" align="middle" width="57%" margin="0 auto" /&gt;
+
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; What is the data-ink ratio here?&lt;/b&gt;
+&lt;/center&gt;
+Design by Nigel Holmes. TIME magazine.
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# &lt;i&gt;“Nothing is beautiful from every point of view”&lt;/i&gt;
+
+## Horace
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+## Visual bias #1
+
+&lt;center&gt;
+&lt;img src="img/blind2020_8_24D9_52_47.png" align="middle" width="35%" margin="0 auto" /&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; What is the number above?&lt;/b&gt;
+
+&lt;/center&gt;
+
+---
+## Visual bias #2
+
+&lt;center&gt;
+&lt;img src="img/Spinning_Dancer2020_9_22D12_45_58.gif" align="middle" width="33%" margin="0 auto" /&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Does the dancer spin clockwise or counter-clockwise?&lt;/b&gt;
+
+&lt;/center&gt;
+
+---
+## Visual bias #2
+
+&lt;center&gt;
+&lt;img src="img/explanation.gif" align="middle" width="45%" margin="0 auto" /&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Does the dancer spin clockwise or counter-clockwise?&lt;/b&gt;
+
+&lt;/center&gt;
+
+---
+## Visual bias #3
+
+&lt;center&gt;
+&lt;img src="img/The_Dress.png" align="middle" width="33%" margin="0 auto" /&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Is the dress black and blue, or white and gold?&lt;/b&gt;
+
+&lt;/center&gt;
+
+---
+## Visual bias #4
+
+.pull-left[
+In 1951, the psychologist Solomon Asch asked volunteers to evaluate whether A, B or C has the same length as the bar on the left. In reality, only one person was the subject, the others were actors who were instructed to give the (same) wrong answer. 
+
+]
+
+.pull-right[
+&lt;center&gt;
+
+&lt;img src="img/Asch_experiment.png" width=70%&gt;
+
+&lt;img src="img/ASCH.jpg"&gt;
+&lt;/center&gt;
+]
+
+---
+## Visual bias #4
+
+.pull-left[
+In 1951, the psychologist Solomon Asch asked volunteers to evaluate whether A, B or C has the same length as the bar on the left. In reality, only one person was the subject, the others were actors who were instructed to give the (same) wrong answer. 
+
+**Asch found that 37% of the test subjects also give the wrong answer to conform to the group.**
+]
+
+.pull-right[
+&lt;center&gt;
+
+&lt;img src="img/Asch_experiment.png" width=70%&gt;
+
+&lt;img src="img/ASCH.jpg"&gt;
+&lt;/center&gt;
+]
+
+---
+# People are different
+
+- The brain has some unexpected biases, and the social context matters
+- Do not assume people see the same thing as you
+- Approximately 8% of men are color-blind
+
+---
+## Misperceptions: edges, contrasts and colors
+
+&lt;center&gt;
+&lt;img src="img/ch-01-perception-hermann-grid-effect2020_9_22D12_47_44.jpg" width = 45%&gt;
+&lt;br&gt;The Hermann grid effect.
+&lt;/center&gt;
+
+---
+## Misperceptions: edges, contrasts and colors
+
+&lt;center&gt;
+&lt;img src="img/ch-01-perception-adelson-checkershow2020_9_22D12_48_172022_9_18D10_16_21.jpg" width = 95%&gt;
+&lt;br&gt;&lt;br&gt;
+The checkershadow illusion.
+&lt;/center&gt;
+
+---
+## Misperceptions: edges, contrasts and colors
+
+&lt;center&gt;
+&lt;img src="img/ch-01-perception-adelson-checkershow2020_9_22D12_48_17.jpg" width = 95%&gt;
+&lt;br&gt;&lt;br&gt;
+The checkershadow illusion.
+&lt;/center&gt;
+
+---
+## Misperceptions: Gestalt rules
+
+&lt;center&gt;
+&lt;img src="img/random2020_9_22D12_48_44.png"&gt;
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Which distribution is random uniform?&lt;/b&gt;
+&lt;br&gt;
+&lt;/center&gt;
+
+---
+
+## Misperceptions: Gestalt rules
+
+&lt;center&gt;
+&lt;img src="img/random22020_9_22D12_49_6.png"&gt;
+&lt;/center&gt;
+
+---
+## Misperceptions: Gestalt rules
+
+.pull-left[The strong inferences we make about relationships between visual elements from relatively sparse visual information are called “Gestalt rules”.]
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/ch-01-poisson-process-12020_9_22D12_49_29.png" width=50%&gt;
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Which distribution is random uniform?&lt;/b&gt;
+&lt;br&gt;
+&lt;/center&gt;
+]
+
+
+---
+## Misperceptions: Gestalt rules
+.pull-left[The strong inferences we make about relationships between visual elements from relatively sparse visual information are called “Gestalt rules”.
+
+Each panel shows simulated data. The upper panel shows a random point pattern generated by a **Poisson process**. The lower panel is from a **Matérn model**, where new points are randomly placed but cannot be too near already-existing ones. Most people see the Poisson-generated pattern as having more structure, or less ‘randomness’, than the Matérn, whereas the reverse is true!
+
+**Source**: &lt;a src="https://socviz.co/lookatdata.html"&gt;Data Visualization: A Practical Introduction (2018)&lt;/a&gt;.
+
+]
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/ch-01-poisson-process-12020_9_22D12_49_29.png" width=50%&gt;
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt;&lt;b&gt; Which distribution is random uniform?&lt;/b&gt;
+&lt;br&gt;
+&lt;/center&gt;
+]
+
+
+
+---
+# The eye is imperfect
+
+- Know the classic biases and avoid them
+- Always verify your visual impressions
+
+---
+## Standard palettes
+
+&lt;center&gt;
+&lt;img src="img/colourbar_uk2020_9_22D12_50_5.png" width = 55%&gt;
+&lt;br&gt;
+UK mean temperature, shown for four different colour scales, for both normal vision (top) and a red-green colour blind simulation (bottom).
+&lt;br&gt;
+The palette “Viridis” is optimized for human vision.
+&lt;/center&gt;
+
+**Source**: &lt;a src="https://www.climate-lab-book.ac.uk/2015/new-viridis-colour-scale/"&gt;Climate Lab Book&lt;/a&gt;.
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# &lt;i&gt;“I never make the same mistake twice. More like three or four times just to be sure.”&lt;/i&gt;
+
+## Unknown
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+# Cleveland's three visual operations of pattern perceptions
+
+.pull-left[
+1. **Detection**: the visual recognition that a geometric object encodes a physical value
+2. **Assembly**:  grouping of detected graphical elements
+3. **Estimation**:  visual assessment of the relative magnitude of two or more quantitative physical values
+
+&lt;br&gt;
+##### Credit: John Rauser
+
+]
+.pull-right[
+&lt;img src="img/419GVCrktGL._AC_UL600_SR432,600_.jpg" width=60%&gt;
+]
+
+---
+
+# Levels of estimation
+
+##### Credit: John Rauser
+
+Three different levels of estimation:
+
+1. **Discrimination**: two values are different  &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;    &lt;code&gt;X=Y X!=Y&lt;/code&gt;
+2. **Ranking**: something is bigger   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;    &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &amp;nbsp;   &lt;code&gt;X&gt;Y   X&amp;lt;Y&lt;/code&gt;
+3. **Ratioing**: something is two times bigger   &amp;nbsp;      &amp;nbsp;   &amp;nbsp;   &amp;nbsp;    &lt;code&gt;X/Y = ?&lt;/code&gt;
+
+--
+&lt;br&gt;
+&lt;br&gt;
+All of these involves comparison: **efficient comparison between different data points is nearly always the point of a visualization**.
+
+
+---
+# Cleveland’s ranking
+##### Credit: John Rauser
+&lt;i class="fa fa-file"&gt;&lt;/i&gt; Cleveland and McGill (1985) Graphical Perception and Graphical Methods for Analyzing Scientific Data. Science 29(4716):828-833
+
+| Rank | Aspect judged |
+| --- | --- |
+| 1 | Position along a common scale | 
+| 2 | Position on identical but unaligned scales |
+| 3 | Length |
+| 4 | Angle or slope |
+| 5 | Area |
+| 6 | Volume or Density or Color saturation |
+| 7 | Color hue |
+
+How accurate humans are at estimating quantities that are encoded in different ways.
+
+--
+
+- Seven different ways to  encode a quantitative value ranked from most effective to least effective 
+
+---
+## Color perception
+
+There are three channels that are in encoded in any one color:
+
+&lt;img src="img/xjgXX2020_9_22D12_50_42.jpg"&gt;
+
+--
+&lt;br&gt;
+Color hue = color 
+
+---
+## Example with color hue
+##### Credit: John Rauser
+.pull-left[
+&lt;center&gt;
+&lt;img src="img/hue2020_9_22D12_51_28.png"&gt;
+&lt;/center&gt;
+Chart that encodes information using hue - &lt;small&gt;Dataset of 32 cars that were tested in a 1974 issue of Motor Trend magazine. Fuel efficiency in miles per gallon or mpg&lt;/small&gt;.  
+
+]
+
+---
+
+## Example with color hue
+##### Credit: John Rauser
+.pull-left[
+&lt;center&gt;
+&lt;img src="img/Diapositiva12020_9_22D12_51_57.PNG"&gt;
+&lt;/center&gt;
+Chart that encodes information using hue - &lt;small&gt;Dataset of 32 cars that were tested in a 1974 issue of Motor Trend magazine. Fuel efficiency in miles per gallon or mpg&lt;/small&gt;.   
+
+]
+
+.pull-right[
+The first Cleveland's estimation task is **discrimination**: 
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; What do you think about these two values: **Pontiac Firebird** vs  **Merc450SLC**, are they the same or different?
+]
+
+---
+
+## Example with color hue
+##### Credit: John Rauser
+
+.pull-left[
+&lt;center&gt;
+&lt;img src="img/Diapositiva22020_9_22D12_52_22.PNG"&gt;
+&lt;/center&gt;
+Chart that encodes information using hue - &lt;small&gt;Dataset of 32 cars that were tested in a 1974 issue of Motor Trend magazine. Fuel efficiency in miles per gallon or mpg&lt;/small&gt;.   
+
+]
+
+.pull-right[
+The first Cleveland's estimation task is **discrimination**: 
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; What about **Merc450SLC** vs **Dodge Challenger**, are they the same or different?
+]
+
+---
+
+## Example with color hue
+##### Credit: John Rauser
+
+.pull-left[
+&lt;center&gt;
+&lt;img src="img/Diapositiva32020_9_22D12_52_47.PNG"&gt;
+&lt;/center&gt;
+Chart that encodes information using hue - &lt;small&gt;Dataset of 32 cars that were tested in a 1974 issue of Motor Trend magazine. Fuel efficiency in miles per gallon or mpg&lt;/small&gt;.    
+
+]
+
+.pull-right[
+The second Cleveland's estimation task is **ranking**: 
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; What about **Toyota Corolla** vs **Chrysler Imperial**, which has better fuel efficiency?
+
+
+]
+
+
+
+---
+
+## Example with color hue
+##### Credit: John Rauser
+
+.pull-left[
+&lt;center&gt;
+&lt;img src="img/Diapositiva32020_9_22D12_52_47.PNG"&gt;
+&lt;/center&gt;
+Chart that encodes information using hue - &lt;small&gt;Dataset of 32 cars that were tested in a 1974 issue of Motor Trend magazine. Fuel efficiency in miles per gallon or mpg&lt;/small&gt;.    
+
+]
+
+.pull-right[
+The second Cleveland's estimation task is **ranking**: 
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; What about **Toyota Corolla** vs **Chrysler Imperial**, which has better fuel efficiency?
+
+But you need a **legend** to know if light blue is in the high or low scale: **hue does not have a natural ranking**.
+]
+
+
+
+---
+
+## Example with position
+##### Credit: John Rauser
+This is how the data should have been plotted: ranking, discrimination and rationing are trivial!
+&lt;center&gt;
+&lt;img src="img/plot22020_9_22D12_53_14.png" width = 50%&gt;
+&lt;/center&gt;
+
+---
+## Why stacking is bad?
+##### Credit: John Rauser
+&lt;center&gt;
+&lt;img src="img/stack2020_9_22D12_53_47.png" width = 50%&gt;
+&lt;br&gt;
+
+Dataset of 54,000 diamonds. &lt;b&gt;Stacked bar chart&lt;/b&gt;: Count of diamonds in each combination of cut and clarity.
+&lt;br&gt;
+&lt;i class="fa fa-question-circle"&gt;&lt;/i&gt; Are there more  SI1 premium cut diamonds or SI2 premium cut diamonds?
+
+&lt;/center&gt;
+
+---
+
+## Why stacking is bad?
+##### Credit: John Rauser
+&lt;center&gt;
+&lt;img src="img/lines2020_9_22D12_54_13.png" width = 50%&gt;
+&lt;br&gt;
+
+Dataset of 54,000 diamonds. &lt;b&gt;Parallel coordinates chart&lt;/b&gt;.&lt;br&gt;
+
+&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt; If you want to communicate the count in each combination of cut and clarity, &lt;b&gt;encode that information using position on a common scale&lt;/b&gt;.
+
+&lt;/center&gt;
+
+
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# &lt;i&gt;“A picture is worth a thousand words”&lt;/i&gt;
+
+## Probably Tess Flanders
+
+---
+layout: true
+class: animated, fadeIn
+
+
+---
+# The power of images
+.pull-left[
+### Mazamet ville morte
+In 1973, a journalist
+realized that the number of
+**casualties on the road** is
+the same as the population
+of the city **Mazamet**.
+
+He
+asked people to play
+dead, so that people can
+“**_see_**” the death burden on
+the French population.
+
+
+From 1973, the death toll
+kept decreasing in France.]
+
+.pull-right[
+&lt;img src="img/france2020_9_22D12_54_46.png"&gt;&lt;/img&gt;
+]
+
+---
+
+# Recap
+
+1. Think about your audience and your message
+
+2. Hide the figure, show the data (or the reverse)
+
+3. See through the eyes of your audience
+
+---
+
+class: animated, fadeIn
+
+### What problems do you identify in the following news?
+
+&lt;center&gt;
+&lt;img src="img/noticias.png" width = 65%&gt;
+&lt;br&gt;
+
+--
+
+If you find more news like this, add it to the ATENeA!
+
+---
+
+## Case study #1
+&lt;center&gt;
+&lt;img src="img/nobel-laureates2020_9_22D12_55_13.jpg" width=40%&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Case study #2
+&lt;center&gt;
+&lt;img src="img/institution2020_9_22D12_55_40.png"&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Case study #3
+&lt;center&gt;
+&lt;img src="img/sPcjdLf2020_9_22D12_56_6.jpg"&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Case study #4
+&lt;center&gt;
+&lt;img src="img/hickey-jld-112020_9_22D12_56_27.png" width=58%&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Case study #5
+&lt;center&gt;
+&lt;img src="img/traffic2020_9_22D12_56_50.png" width = 50%&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Case study #6
+&lt;center&gt;
+&lt;img src="img/flowers-national-parks-42020_9_22D12_57_10.png" width = 48%&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+
+## Case study #7
+&lt;center&gt;
+&lt;img src="img/IIB_Best-In-Show_1276x22020_9_22D12_57_34.png" width = 75%&gt;&lt;/img&gt;
+&lt;/center&gt;
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+#### Thanks to Guillaume Fillion for kindly providing his materials.
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
