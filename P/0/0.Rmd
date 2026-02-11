@@ -849,16 +849,16 @@ head(data_tidy)
 
 | Marta Coronado Zamora | Jose F. Sánchez | 
 |:-:|:-:|
-| <a href="mailto:Marta.coronado@upc.edu"><i class="fa fa-paper-plane fa-fw"></i> Marta.coronado@upc.edu</a> | <a href="mailto:JoseFrancisco.Sanchez@uab.cat"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; JoseFrancisco.Sanchez@uab.cat</a> | 
-| <a href="https://twitter.com/geneticament"><i class="fab fa-twitter fa-fw"></i>&nbsp; @geneticament</a> |                 <a href="https://twitter.com/JFSanchezBioinf"><i class="fab fa-twitter fa-fw"></i>&nbsp; @JFSanchezBioinf</a> |
-| <a href="https://www.ibb.csic.es/ca/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Institut Botànic de Barcelona (CSIC-CMCNB)</a> |    <a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"> <i class="fa fa-map-marker fa-fw"></i>Germans Trias i Pujol Research Institute (IGTP)</a> |
+| <a href="mailto:Marta.coronado@uab.cat"><i class="fa fa-paper-plane fa-fw"></i> marta.coronado@uab.cat</a> | <a href="mailto:JoseFrancisco.Sanchez@uab.cat"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; josefrancisco.sanchez@uab.cat</a> | 
+| <a href="https://bsky.app/profile/geneticament.bsky.social"><i class="fab fa-bluesky fa-fw"></i>&nbsp; @geneticament</a> |                 <a href="https://twitter.com/JFSanchezBioinf"><i class="fab fa-twitter fa-fw"></i>&nbsp; @JFSanchezBioinf</a> |
+| <a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Universitat Autònoma de Barcelona </a> |    <a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"> <i class="fa fa-map-marker fa-fw"></i>Germans Trias i Pujol Research Institute (IGTP)</a> |
 
 #### Practical lessons <br>
 
 | Miriam Merenciano |
 |:-:|
-| <a href="mailto:miriam.merenciano@univ-lyon1.fr"><i class="fa fa-paper-plane fa-fw"></i> miriam.merenciano@univ-lyon1.fr </a> | 
-|  <a href="https://www.univ-lyon1.fr/en/research/biometry-and-evolutionary-biology-laboratory-lbbe"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Laboratory of Biometry and Evolutionary Biology (LBBE)) </a> | 
+| <a href="mailto:miriam.merenciano@uab.cat"><i class="fa fa-paper-plane fa-fw"></i> miriam.merenciano@uab.cat </a> | 
+|  <a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Universitat Autònoma de Barcelona </a> | 
 
 
 
