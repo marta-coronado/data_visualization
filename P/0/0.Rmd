@@ -667,8 +667,8 @@ class: animated, fadeIn
 There are functions to convert from wide format to long format:
 
 ```{r eval = TRUE, echo = TRUE}
-# Paquete tidyverse, función pivot_longer
-library(tidyverse)
+library(tidyr)
+
 long_df <- pivot_longer(
   wide_df,
   cols = c(Math, Literature, PE), # o  cols = -c(Student),
@@ -764,7 +764,7 @@ ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + geom_point
 <br>
 --
 
-Here we can see using a scatter plot, the variable sepal width and sepal length and coloured regarding the species it belongs
+Here we can see using a **scatter plot**, the variable sepal width and sepal length and coloured regarding the species it belongs
 
 
 ---
@@ -774,23 +774,29 @@ class: animated, fadeIn
 
 ## Exercise: describe a data set
 
-Read the file in this [link](https://goo.gl/c9szmq), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
+Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
+
+<i class="fa fa-key fa-fw"></i> Which column(s) will you use in the `cols` argument of the `pivot_longer` function?
 
 ---
+class: animated, fadeIn
+
+# Today's task
+
 ## Exercise: describe a data set
 
-Read the file in this [link](https://goo.gl/c9szmq), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
-
---
+Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
 
 ```{r eval = TRUE, echo = TRUE}
-data <- read.table(file="https://goo.gl/c9szmq", header=T)
+data <- read.table(file="https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt", header=T)
 head(data)
 dim(data)
-
 ```
 
 ---
+class: animated, fadeIn
+
+# Today's task
 
 ## Exercise: describe a data set
 
@@ -802,19 +808,22 @@ str(data)
 ```
 
 ---
+class: animated, fadeIn
+
+# Today's task
 
 ## Exercise: describe a data set
 
-Convert from wide to long format using `reshape2::melt()`
+Convert from wide to long format using `tidyr::pivot_longer()`
 
 ```{r eval = TRUE, echo = TRUE}
-data_tidy <- reshape2::melt(                        
-    data,                                 
-    id.vars = c("ID", "Group"),                                        
-    variable.name = "metric",               
-    value.name = "value")                    
-head(data_tidy)
-
+library(tidyr)
+long_df <- pivot_longer(
+  data,
+  cols = -c("ID", "Group"),
+  names_to = "metric",
+  values_to = "value"
+  )
 ## check dimensions
 dim(data_tidy)
 dim(data)
@@ -824,22 +833,28 @@ dim(data)
 
 ---
 
+class: animated, fadeIn
+
+# Today's task
+
 ## Exercise: describe a data set
 
-Use `tidyr::gather()`
+Convert from wide to long format using `tidyr::pivot_longer()`
 
 ```{r eval = TRUE, echo = TRUE}
+library(tidyr)
+long_df <- pivot_longer(
+  data,
+  cols = -c("ID", "Group"),
+  names_to = "metric",
+  values_to = "value"
+  )
 
-data_tidy <- tidyr::gather(
-    data,
-    -c(ID, Group),                    
-    key = "metric",
-    value = "score")
-head(data_tidy)
-
+head(long_df)
 ```
 
 ---
+class: animated, fadeIn
 
 ## See you next day
 

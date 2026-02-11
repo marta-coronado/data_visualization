@@ -667,8 +667,8 @@ There are functions to convert from wide format to long format:
 
 
 ``` r
-# Paquete tidyverse, función pivot_longer
-library(tidyverse)
+library(tidyr)
+
 long_df &lt;- pivot_longer(
   wide_df,
   cols = c(Math, Literature, PE), # o  cols = -c(Student),
@@ -808,7 +808,7 @@ ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + geom_point
 &lt;br&gt;
 --
 
-Here we can see using a scatter plot, the variable sepal width and sepal length and coloured regarding the species it belongs
+Here we can see using a **scatter plot**, the variable sepal width and sepal length and coloured regarding the species it belongs
 
 
 ---
@@ -818,18 +818,22 @@ class: animated, fadeIn
 
 ## Exercise: describe a data set
 
-Read the file in this [link](https://goo.gl/c9szmq), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
+Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
+
+&lt;i class="fa fa-key fa-fw"&gt;&lt;/i&gt; Which column(s) will you use in the `cols` argument of the `pivot_longer` function?
 
 ---
+class: animated, fadeIn
+
+# Today's task
+
 ## Exercise: describe a data set
 
-Read the file in this [link](https://goo.gl/c9szmq), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
-
---
+Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
 
 
 ``` r
-data &lt;- read.table(file="https://goo.gl/c9szmq", header=T)
+data &lt;- read.table(file="https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt", header=T)
 head(data)
 ```
 
@@ -852,6 +856,9 @@ dim(data)
 ```
 
 ---
+class: animated, fadeIn
+
+# Today's task
 
 ## Exercise: describe a data set
 
@@ -881,32 +888,23 @@ str(data)
 ```
 
 ---
+class: animated, fadeIn
+
+# Today's task
 
 ## Exercise: describe a data set
 
-Convert from wide to long format using `reshape2::melt()`
+Convert from wide to long format using `tidyr::pivot_longer()`
 
 
 ``` r
-data_tidy &lt;- reshape2::melt(                        
-    data,                                 
-    id.vars = c("ID", "Group"),                                        
-    variable.name = "metric",               
-    value.name = "value")                    
-head(data_tidy)
-```
-
-```
-##      ID Group metric     value
-## 1 ID001     B  Width  6.518109
-## 2 ID002     B  Width  6.505138
-## 3 ID003     A  Width 11.428349
-## 4 ID004     A  Width 13.714852
-## 5 ID005     B  Width  8.802453
-## 6 ID006     B  Width 10.038084
-```
-
-``` r
+library(tidyr)
+long_df &lt;- pivot_longer(
+  data,
+  cols = -c("ID", "Group"),
+  names_to = "metric",
+  values_to = "value"
+  )
 ## check dimensions
 dim(data_tidy)
 ```
@@ -925,31 +923,41 @@ dim(data)
 
 ---
 
+class: animated, fadeIn
+
+# Today's task
+
 ## Exercise: describe a data set
 
-Use `tidyr::gather()`
+Convert from wide to long format using `tidyr::pivot_longer()`
 
 
 ``` r
-data_tidy &lt;- tidyr::gather(
-    data,
-    -c(ID, Group),                    
-    key = "metric",
-    value = "score")
-head(data_tidy)
+library(tidyr)
+long_df &lt;- pivot_longer(
+  data,
+  cols = -c("ID", "Group"),
+  names_to = "metric",
+  values_to = "value"
+  )
+
+head(long_df)
 ```
 
 ```
-##      ID Group metric     score
-## 1 ID001     B  Width  6.518109
-## 2 ID002     B  Width  6.505138
-## 3 ID003     A  Width 11.428349
-## 4 ID004     A  Width 13.714852
-## 5 ID005     B  Width  8.802453
-## 6 ID006     B  Width 10.038084
+## # A tibble: 6 × 4
+##   ID    Group metric value
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;
+## 1 ID001 B     Width   6.52
+## 2 ID001 B     Height 41.2 
+## 3 ID001 B     Depth   4.64
+## 4 ID002 B     Width   6.51
+## 5 ID002 B     Height 44.1 
+## 6 ID002 B     Depth   4.82
 ```
 
 ---
+class: animated, fadeIn
 
 ## See you next day
 
