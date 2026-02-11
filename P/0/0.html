@@ -55,6 +55,7 @@ class: center, middle, animated, bounceInDown
 }
 &lt;/style&gt;
 
+
 ## Keep in touch
 
 #### Theory lessons &lt;br&gt;
@@ -83,6 +84,7 @@ class: animated, fadeIn
 
 **P0** | Course Introduction. (&lt;font color=" #A8A8A8"&gt;Marta Coronado Zamora &amp; Miriam Merenciano&lt;/font&gt;)&lt;br&gt;&lt;br&gt;
 
+--
 **T1** | Introduction. Perception, illusions, inter-individual variability, ranking of visual features and common pitfalls (&lt;font color=" #A8A8A8"&gt;Marta Coronado&lt;/font&gt;)&lt;br&gt;&lt;br&gt;
 
 --
@@ -157,6 +159,8 @@ class: animated, fadeIn
 - **Seminars**:
   Invited seminars either in person or online, live or broadcast.
 
+  - 27th March | **Clara Inserte**: `clevRvis`: visualization techniques for clonal evolution
+  
 ---
 class: animated, fadeIn
 
@@ -715,7 +719,7 @@ class: animated, fadeIn
 
 # Today's task
 
-1. Make sure Rstudio it is working
+1. Make sure **RStudio** is working
 2. Make groups of 3-4 people and fill the form at ATENeA
 3. Install some packages you will need for this practical sessions:
 
@@ -734,8 +738,6 @@ class: animated, fadeIn
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: create some testing plots
 
 Execute the following chunks using the [`iris`](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset and think what is going on:
@@ -744,38 +746,15 @@ Execute the following chunks using the [`iris`](https://en.wikipedia.org/wiki/Ir
 ``` r
 library(ggplot2)
 head(iris)
-```
-
-```
-##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa
-```
-
-``` r
 str(iris)
-```
-
-```
-## 'data.frame':	150 obs. of  5 variables:
-##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
-##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
-##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
-##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-##  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: create some testing plots
 
+&lt;i class="fa fa-question-circle fa-fw"&gt;&lt;/i&gt; What figure does the following command generate?
 
 
 ``` r
@@ -783,9 +762,8 @@ ggplot(data = iris, mapping = aes(x = Species, y = Petal.Length, fill = Species)
   geom_boxplot()
 ```
 
-&lt;img src="0_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
-
 &lt;br&gt;
+
 --
 
 Here we can see the distribution of the variable petal length regarding the species it belongs
@@ -794,16 +772,14 @@ Here we can see the distribution of the variable petal length regarding the spec
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: create some testing plots
+
+&lt;i class="fa fa-question-circle fa-fw"&gt;&lt;/i&gt; What figure does the following command generate?
 
 
 ``` r
 ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + geom_point() + theme_minimal()
 ```
-
-&lt;img src="0_files/figure-html/unnamed-chunk-25-1.png" style="display: block; margin: auto;" /&gt;
 
 &lt;br&gt;
 --
@@ -814,18 +790,18 @@ Here we can see using a **scatter plot**, the variable sepal width and sepal len
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: describe a data set
 
 Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
 
 &lt;i class="fa fa-key fa-fw"&gt;&lt;/i&gt; Which column(s) will you use in the `cols` argument of the `pivot_longer` function?
 
+&lt;i class="fa fa-key fa-fw"&gt;&lt;/i&gt; You can read directly a file from a link `read.table("https://...txt")`
+
+Solutions in the next slides 😇
+
 ---
 class: animated, fadeIn
-
-# Today's task
 
 ## Exercise: describe a data set
 

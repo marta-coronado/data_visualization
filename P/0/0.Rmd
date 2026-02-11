@@ -67,6 +67,7 @@ class: center, middle, animated, bounceInDown
 }
 </style>
 
+
 ## Keep in touch
 
 #### Theory lessons <br>
@@ -95,6 +96,7 @@ class: animated, fadeIn
 
 **P0** | Course Introduction. (<font color=" #A8A8A8">Marta Coronado Zamora & Miriam Merenciano</font>)<br><br>
 
+--
 **T1** | Introduction. Perception, illusions, inter-individual variability, ranking of visual features and common pitfalls (<font color=" #A8A8A8">Marta Coronado</font>)<br><br>
 
 --
@@ -169,6 +171,8 @@ class: animated, fadeIn
 - **Seminars**:
   Invited seminars either in person or online, live or broadcast.
 
+  - 27th March | **Clara Inserte**: `clevRvis`: visualization techniques for clonal evolution
+  
 ---
 class: animated, fadeIn
 
@@ -700,7 +704,7 @@ class: animated, fadeIn
 
 # Today's task
 
-1. Make sure Rstudio it is working
+1. Make sure **RStudio** is working
 2. Make groups of 3-4 people and fill the form at ATENeA
 3. Install some packages you will need for this practical sessions:
 
@@ -719,13 +723,11 @@ class: animated, fadeIn
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: create some testing plots
 
 Execute the following chunks using the [`iris`](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset and think what is going on:
 
-```{r eval = TRUE, echo = TRUE}
+```{r eval = F, echo = TRUE}
 library(ggplot2)
 head(iris)
 str(iris)
@@ -734,17 +736,17 @@ str(iris)
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: create some testing plots
 
+<i class="fa fa-question-circle fa-fw"></i> What figure does the following command generate?
 
-```{r eval = TRUE, echo = TRUE, fig.align='center'}
+```{r eval = F, echo = TRUE, fig.align='center'}
 ggplot(data = iris, mapping = aes(x = Species, y = Petal.Length, fill = Species)) +
   geom_boxplot()
 ```
 
 <br>
+
 --
 
 Here we can see the distribution of the variable petal length regarding the species it belongs
@@ -753,11 +755,11 @@ Here we can see the distribution of the variable petal length regarding the spec
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: create some testing plots
 
-```{r eval = TRUE, echo = TRUE, fig.align='center'}
+<i class="fa fa-question-circle fa-fw"></i> What figure does the following command generate?
+
+```{r eval = F, echo = TRUE, fig.align='center'}
 ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + geom_point() + theme_minimal()
 ```
 
@@ -770,18 +772,18 @@ Here we can see using a **scatter plot**, the variable sepal width and sepal len
 ---
 class: animated, fadeIn
 
-# Today's task
-
 ## Exercise: describe a data set
 
 Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
 
 <i class="fa fa-key fa-fw"></i> Which column(s) will you use in the `cols` argument of the `pivot_longer` function?
 
+<i class="fa fa-key fa-fw"></i> You can read directly a file from a link `read.table("https://...txt")`
+
+Solutions in the next slides 😇
+
 ---
 class: animated, fadeIn
-
-# Today's task
 
 ## Exercise: describe a data set
 
