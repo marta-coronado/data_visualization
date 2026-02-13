@@ -159,7 +159,7 @@ class: animated, fadeIn
 
 - **Home assignments:**
   
-  Work in groups to create analyze data, create visualization, interactive reports and apps... 
+  Work in groups to analyze real data, create visualizations, interactive reports and apps... 
   
   Complete and submit to [ATENeA](https://atenea.upc.edu/course/view.php?id=95546) - submission by group 
 
