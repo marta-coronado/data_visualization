@@ -637,7 +637,7 @@ In 1951, the psychologist Solomon Asch asked volunteers to evaluate whether A, B
 
 - The brain has some unexpected biases, and the social context matters
 - Do not assume people see the same thing as you
-- Approximately 8% of men are color-blind
+- Approximately 8% of XY people are color-blind
 
 ---
 ## Misperceptions: edges, contrasts and colors
