@@ -9,10 +9,10 @@ title: "Data Visualization lessons (UPC)"
 ---
 
 ## 📖 Theory
-- [Introduction to data visualization](/T/0/0.html)
-- [Basic tools for data visualization: `ggplot2` (HTML)](/T/1/1.html)
-- [Basic tools for data visualization: `ggplot2` (Rmd)](/T/1/1.Rmd)
-- [Basic tools for data visualization: `ggplot2` (solutions-HTML)](/T/1/1_sol.html)
+- [Introduction to data visualization](T/0/0.html)
+- [Basic tools for data visualization: `ggplot2` (HTML)](T/1/1.html)
+- [Basic tools for data visualization: `ggplot2` (Rmd)](T/1/1.Rmd)
+- [Basic tools for data visualization: `ggplot2` (solutions-HTML)](T/1/1_sol.html)
   
 ---
 
