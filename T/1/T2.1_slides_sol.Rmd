@@ -5,7 +5,7 @@ author: ""
 date: ""
 output:
   xaringan::moon_reader:
-    css: ["default", "rutgers", "metropolis-fonts", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v5.10.1/css/all.css"]
+    css: [xaringan-themer.css, rutgers, "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v7.0.0/css/all.css"]
     lib_dir: libs
     self_contained: true
     nature:
@@ -18,7 +18,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 # Animations: https://github.com/daneden/animate.css#animations
-knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE, message = FALSE, warning = F,  fig.retina = 3)
 library(ggplot2)
 # pagedown::chrome_print("T2.1_slides_sol.html")
 # Package for slides
@@ -877,7 +877,7 @@ base + labs(title = "coord_cartesian()")
 base + coord_polar(theta = "x") + labs(title = "polar(theta = 'x')")
 base + coord_polar(theta = "y") + labs(title = "polar(theta = 'y')")
 base + coord_flip() + labs(title = "coord_flip()")
-base + coord_trans(y = "log10") + labs(title = "coord_trans(y = 'log10')")
+base + coord_transform(y = "log10") + labs(title = "coord_trans(y = 'log10')")
 base + coord_fixed() + labs(title = "coord_fixed()")
 # Adapted examples from ggplot2 book "ggplot2. Elegant Graphics for Data Analysis"
 ```
