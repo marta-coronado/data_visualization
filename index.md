@@ -18,6 +18,7 @@ title: "Data Visualization lessons (UPC)"
 ## 💻 Computer practicals
 - [Practical 0: Course introduction and configuration](P/0/0.html)
 - [Practical 1: First steps with ggplot2](P/1/1.html)
+- [Slides for Practical 1](P/1/1_slides.html)
 - <a href="P/1/1.Rmd" download>Download the `Rmd` document of practical 1 here</a>.
  
 ✍️ *Last update: {{ site.time | date: "%d-%m-%Y" }}*
