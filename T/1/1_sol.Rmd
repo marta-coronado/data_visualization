@@ -20,13 +20,12 @@ options(htmltools.dir.version = FALSE)
 # Animations: https://github.com/daneden/animate.css#animations
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4.5, fig.height = 3.5, fig.show = 'hold', message = FALSE, message = FALSE, warning = F,  fig.retina = 3)
 library(ggplot2)
-# pagedown::chrome_print("T2.1_slides.html")
+# pagedown::chrome_print("T2.1_slides_sol.html")
 # Package for slides
 # remotes::install_github('yihui/xaringan')
 ```
 
 class: center, middle, animated, bounceInDown
-
 
 #### Theory lessons <br>
 
@@ -79,7 +78,7 @@ layout: false
 class: left, bottom, inverse, animated, bounceInDown
 
 # Get started!
-## **Graphics with `ggplot2`**
+## Graphics with `ggplot2`
 
 ---
 layout: true
@@ -310,6 +309,20 @@ ggplot() +
 ```
 
 
+
+--
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+
+<ul>
+<li>Continuous: position, transparency and size</li>
+<li>Discrete: all aesthetics (color, shape, line type, position, transparency and size)</li>
+</ul>
+&emsp;
+</div>
+
 ---
 ### Layers: mapping data onto aesthetics
 
@@ -391,6 +404,27 @@ ggplot(diamonds, aes(carat, price)) +
   geom_point(aes(log(brainwt), log(bodywt)), data = msleep)
 ```
 
+---
+
+### Layers: mapping data onto aesthetics
+
+#### <i class="fas fa-pencil-alt"></i> **Exercise** | Simplify the following code.
+
+```{r echo = TRUE, eval = FALSE}
+# Answer
+
+ggplot(mpg, mapping = aes(x = displ, y = hwy)) + 
+    geom_point()
+
+ggplot(data = mpg, mapping = aes(cty, hwy)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot() +
+  geom_point(aes(log(brainwt), log(bodywt)), data = msleep)
+
+```
+
 
 ---
 
@@ -449,6 +483,14 @@ ggplot(mtcars, aes(x = factor(cyl), fill = factor(am))) +
   geom_bar(colour = "white")
 ```
 
+--
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+There are 6 groups: two discrete variables where used: <code>cyl</code> and <code>am</code>.
+&emsp;
+</div>
 
 ---
 ### Layers: mapping data onto aesthetics
@@ -482,11 +524,20 @@ p + geom_line() + labs(title = "geom_line")
 p + geom_path() + labs(title = "geom_path")
 p + geom_polygon() + labs(title = "geom_polygon")
 p + geom_area() + labs(title = "geom_area")
-
 ```
 
 #### <i class="fas fa-pencil-alt"></i> **Exercise** | Which geoms are collective? (multiple observations share a geometrical object)
 
+--
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+
+Collective geoms: <code>geom_line</code>, <code>geom_path</code>, <code>geom_polygon</code>, <code>geom_area</code>.
+
+&emsp;
+</div>
 
 ---
 
@@ -711,6 +762,19 @@ C. To write some text
 # answer
 
 ```
+
+--
+
+<div style="background-color:#F0F0F0">
+&emsp;<i class="fas fa-comment-dots"></i>
+Answer:
+<br>
+A. To highlight some points: <code>geom_point</code>, <code>annotate</code><br>
+B. To add the expected linear trend: <code>geom_smooth</code><br>
+C. To write some text <code>geom_text</code>
+
+&emsp;
+</div>
 
 ---
 
@@ -947,12 +1011,16 @@ p <- ggplot(msleep, aes(x = vore, y = sleep_total, colour = vore,
 
 
 ```{r echo=TRUE, eval=TRUE}
-
+ p +
+   theme(legend.position = "top",
+         panel.background = element_rect(fill = "white"),
+         axis.ticks.y = element_blank(),
+         axis.text.x = element_text(angle = 45, vjust = 0.5))
 ```
 
 ---
 layout: false
 class: inverse, center, middle, animated, bounceInDown
 
-### Upload `T2.1_slides.Rmd` with the completed exercises (text included) to [Atenea](https://atenea.upc.edu/course/view.php?id=105474)
+### Upload `1.Rmd` with the completed exercises (text included) to [Atenea](https://atenea.upc.edu/course/view.php?id=105474)
 
