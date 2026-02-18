@@ -2,7 +2,7 @@
 title: "**P1** | Basic tools for data visualization"
 subtitle: "Introduction"
 author: "<b>Marta Coronado Zamora and Miriam Merenciano</b>"
-date: "20 September 2024"
+date: "19 February 2026"
 output:
   xaringan::moon_reader:
     css: ["default", "rutgers", "metropolis-fonts", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v5.10.1/css/all.css"]
