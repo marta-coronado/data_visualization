@@ -1,0 +1,413 @@
+---
+title: "**P1** | Basic tools for data visualization"
+subtitle: "Introduction"
+author: "<b>Marta Coronado Zamora and Miriam Merenciano</b>"
+date: "20 September 2024"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rutgers", "metropolis-fonts", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v5.10.1/css/all.css"]
+    lib_dir: libs
+    self_contained: yes
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# Animations: https://github.com/daneden/animate.css#animations
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4, fig.height = 3.5, fig.show = 'hold', message = FALSE)
+library(ggplot2)
+library(lattice)
+library(tidyverse)
+# pagedown::chrome_print("/Users/miriam/Desktop/DATA-VISUALIZATION/P1-slides.html")
+```
+
+class: center, animated, bounceInDown
+
+<style>
+.title-slide {
+  background-image: url(https://fibvisiona.com/sites/default/files/inline-images/logo-upc.png);
+  background-size: 300px;
+}
+</style>
+
+# Keep in touch
+
+| Miriam Merenciano |
+|:-:|
+| <a href="mailto:miriam.merenciano@uab.cat"><i class="fa fa-paper-plane fa-fw"></i> miriam.merenciano@uab.cat </a> | 
+|  <a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Universitat Autònoma de Barcelona </a> |
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+# Practical session dynamics
+
+**Content** (P1-P5)
+- Introduction 
+- Exercises - complete and submit to [ATENEA](https://atenea.upc.edu/login/index.php)
+- Project (divided in to 2 assignments)
+<br><br>
+
+---
+class: animated, fadeIn
+
+# Evaluation
+
+- **10% participation**
+
+    Individual submission at the end of each theory/practical session
+
+- **40% group assignments** (minimum grade 4/10)
+
+    4 assignments, each 10%<br>
+
+- **20% mid-term exam** 
+
+- **30% final exam** 
+
+    The weighted grade of the midterm exam and the final exam requires a minimum score of 3.5 out of 10 to consider the other parts of the evaluation. 
+    
+    <br>
+    
+    [Information in the Syllabus](https://www.fib.upc.edu/en/studies/bachelors-degrees/bachelor-degree-bioinformatics/curriculum/syllabus/DV-BBI)
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Basic `R` knowledge
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+class: animated, fadeIn
+
+### Tidy data
+
+Data frames with one observation per row and one variable per column.
+
+<center>
+<img src="~/Downloads/tidy-1.png" alt="Bokeh plots" width="900"/>
+</center>
+
+---
+class: animated, fadeIn
+
+### Tidy data
+
+Two types of ordered data structures:
+
+- **Wide format** (the most common): in a wide format, multiple measurements of a single observation are stored in a single row.
+
+```{r, eval = TRUE, echo = F}
+options(width = 300)
+
+wide_df <- data.frame(
+  Student = c("A", "B", "C"),
+  Math = c(99, 73, 12),
+  Literature = c(45, 78, 96),
+  PE = c(56, 55, 57)
+)
+wide_df
+```
+
+--
+class: animated, fadeIn
+
+- **Long format**: each row corresponds to one measurement of an observation.
+
+```{r, eval = TRUE, echo = F}
+library(tidyverse)
+long_df <- pivot_longer(
+  wide_df,
+  cols = c(Math, Literature, PE),
+  names_to = "Subject",
+  values_to = "Score"
+)
+long_df
+```
+
+
+---
+class: animated, fadeIn
+
+### Tidy data
+
+There are functions to convert from wide format to long format:
+
+```{r eval = TRUE, echo = TRUE}
+library(tidyr)
+
+long_df <- pivot_longer(
+  wide_df,
+  cols = c(Math, Literature, PE), # o  cols = -c(Student),
+  names_to = "Subject",
+  values_to = "Score"
+  )
+long_df
+``` 
+  
+
+---
+class: animated, fadeIn
+
+# Getting help <i class="fas fa-question-circle"></i>
+
+- `?read.table`, `?str`, `?as.factor`
+- Press F1 (in RStudio)
+- [Stack Overflow](https://stackoverflow.com) ([`R`](https://stackoverflow.com/questions/tagged/r), [`ggplot2`](https://stackoverflow.com/questions/tagged/ggplot2))
+- ChatGPT
+- Ask your classmates or your teacher
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# First task (just for fun)
+
+---
+class: animated, fadeIn
+
+# First task
+
+1. Make sure **RStudio** is working
+
+2. Install some packages you will need for this practical sessions:
+
+  + `ggplot2`
+
+  + `tidyr`
+  
+  + `shiny`
+  
+  + `plotly`
+
+3. Work in the following exercises
+
+
+---
+class: animated, fadeIn
+
+## Exercise: create some testing plots
+
+Execute the following chunks using the [`iris`](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset and think what is going on:
+
+```{r eval = F, echo = TRUE}
+library(ggplot2)
+head(iris)
+str(iris)
+```
+
+---
+class: animated, fadeIn
+
+## Exercise: create some testing plots
+
+<i class="fa fa-question-circle fa-fw"></i> What figure does the following command generate?
+
+```{r eval = F, echo = TRUE, fig.align='center'}
+ggplot(data = iris, mapping = aes(x = Species, y = Petal.Length, fill = Species)) +
+  geom_boxplot()
+```
+
+<br>
+
+--
+
+Here we can see the distribution of the variable petal length regarding the species it belongs
+
+
+---
+class: animated, fadeIn
+
+## Exercise: create some testing plots
+
+<i class="fa fa-question-circle fa-fw"></i> What figure does the following command generate?
+
+```{r eval = F, echo = TRUE, fig.align='center'}
+ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + geom_point() + theme_minimal()
+```
+
+<br>
+--
+
+Here we can see using a **scatter plot**, the variable sepal width and sepal length and coloured regarding the species it belongs
+
+
+---
+class: animated, fadeIn
+
+## Exercise: describe a data set
+
+Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
+
+<i class="fa fa-key fa-fw"></i> Which column(s) will you use in the `cols` argument of the `pivot_longer` function?
+
+<i class="fa fa-key fa-fw"></i> You can read directly a file from a link `read.table("https://...txt")`
+
+Solutions in the next slides 😇
+
+---
+class: animated, fadeIn
+
+## Exercise: describe a data set
+
+Read the file in this [link](https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt), ensure it has a tidy format; indicate the data type of each variable; convert to long format.
+
+```{r eval = TRUE, echo = TRUE}
+data <- read.table(file="https://raw.githubusercontent.com/marta-coronado/data_visualization/refs/heads/main/P/0/data/sample.txt", header=T)
+head(data)
+dim(data)
+```
+
+---
+class: animated, fadeIn
+
+## Exercise: describe a data set
+
+Indicate the data type of each variable.
+
+```{r eval = TRUE, echo = TRUE}
+sapply(data, class)
+str(data)
+```
+
+---
+class: animated, fadeIn
+
+## Exercise: describe a data set
+
+Convert from wide to long format using `tidyr::pivot_longer()`
+
+```{r eval = TRUE, echo = TRUE}
+library(tidyr)
+long_df <- pivot_longer(
+  data,
+  cols = -c("ID", "Group"),
+  names_to = "metric",
+  values_to = "value"
+  )
+## check dimensions
+dim(long_df)
+dim(data)
+
+
+```
+
+---
+
+class: animated, fadeIn
+
+## Exercise: describe a data set
+
+Convert from wide to long format using `tidyr::pivot_longer()`
+
+```{r eval = TRUE, echo = TRUE}
+library(tidyr)
+long_df <- pivot_longer(
+  data,
+  cols = -c("ID", "Group"),
+  names_to = "metric",
+  values_to = "value"
+  )
+
+head(long_df)
+```
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Get started!
+## **Tools for data visualization**
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+# Practice <i class="fas fa-cogs"></i>
+## Introduction to `ggplot2`
+
+- Open the document `P1_exercises.Rmd` in RStudio and complete the exercises.
+- Upload the completed document to [ATENEA](https://atenea.upc.edu/login/index.php) at the end of the session. Important: both **.Rmd** and **.html**.
+
+- Evaluation:
+  - **5/10** only for uploading a complete document. 
+  - **-1 point** if you use local paths without uploading the working data.
+  - **-1 point** if you do not upload the .html file.
+  - **-1 point** if you do not write your name in the uploaded files.
+
+---
+
+# Project
+
+## Group project
+
+The project has 3 different parts (A, B and C) divided in two big assignments.
+- You can deliver the parts separately to get feedback before submitting the final version
+- Each part must be submitted before next practical session
+- The first assignment will contain parts A and B
+- The second assignment will contain part C
+- ~15 minutes in the end of each class devoted to discuss your problems
+
+---
+# Project
+
+## Group project
+
+__Part A__
+
+- __1\.__ Create groups of \~4 people
+- __2\.__ Choose a data set with the following requirements
+    + Tabular format (txt, csv, tsv...)
+    + More than 80 observations
+    + At least 6 variables
+    + At least 2 discrete and 3 continuous variables
+    + Data with biological meaning
+    + Different from the ones chosen by other groups
+
+---
+# Project
+
+## Group project
+
+- __3\.__ Describe your data set:
+    + Where and why was the information collected?
+    + Which is the meaning of each variable?
+    + Do the variables have unit? Which one?
+    + Does the data set have a long format?
+- __4\.__ Write the code to:
+    + Read it into R
+    + Reshape the data if necessary into long format
+    + Check the variable classes and update them if necessary
+
+Write 3 and 4 in an `R Markdown` document and __submit it before next practical session__ (one per group).
+
+<i class="fas fa-info-circle"></i> If you need help formatting the R Markdown, ask me for a guide of an introduction to R Markdown.
+
+---
+
+## Data sets from research articles
+
+- ["Zika virus evolution and spread in the Americas"](https://www.nature.com/articles/nature22402#supplementary-information) (Table S2)
+- ["Great ape genetic diversity and population history"](https://www.nature.com/articles/nature12228#supplementary-information) (Table S1 or S3)
+- ["Transcriptome and genome sequencing uncovers functional variation in humans"](https://www.nature.com/articles/nature12531). [Table with cis eQTLs in EUR](https://www.ebi.ac.uk/arrayexpress/files/E-GEUV-1/EUR373.gene.cis.FDR5.best.rs137.txt.gz) ([description](https://www.ebi.ac.uk/arrayexpress/files/E-GEUV-1/GeuvadisRNASeqAnalysisFiles_README.txt))
+- ["Signatures of archaic adaptive introgression in present-day human Populations"](https://academic.oup.com/mbe/article/34/2/296/2633371#supplementary-data) (Table S3)
+- ["The evolutionary history of dogs in the Americas"](http://science.sciencemag.org/content/361/6397/81) (Table S1)
+- ["Ancient genomes document multiple waves of migration in Southeast Asian prehistory"](http://science.sciencemag.org/content/361/6397/92) (Table S1)
+- ["Population-scale long-read sequencing uncovers transposable elements associated with gene expression variation and adaptive signatures in _Drosophila_"](https://www.nature.com/articles/s41467-022-29518-8#Sec29) (Table S10)
+- ["Comprehensive characterization of 536 patient-derived xenograft models prioritizes candidates for targeted treatment"](https://www.nature.com/articles/s41467-021-25177-3#Sec31) (Table S1)
+- ["Pan-cancer analysis of whole genomes"](https://www.nature.com/articles/s41586-020-1969-6#Sec23) (Table S1)
+- ["The genomic basis of copper tolerance in _Drosophila_ is shaped by a complex interplay of regulatory and environmental factors"](https://static-content.springer.com/esm/art%3A10.1186%2Fs12915-022-01479-w/MediaObjects/12915_2022_1479_MOESM4_ESM.xlsx) (Table S3)
+- ["Transposons contribute to the diversification of the head, gut, and ovary transcriptomes across _Drosophila_ natural strains"](https://raw.githubusercontent.com/GonzalezLab/chimerics-transcripts-dmelanogaster/main/01.%20Chimeric%20gene-TE%20transcripts/chimerics_v2.tab) (Chimeric gene-TE transcripts data)
+
