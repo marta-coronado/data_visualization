@@ -25,6 +25,19 @@ library(ggplot2)
 # remotes::install_github('yihui/xaringan')
 ```
 
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+library(xaringanExtra)
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+
 class: center, middle, animated, bounceInDown
 
 
@@ -103,7 +116,7 @@ class: animated, fadeIn
 #### Adapted to `R` in the `ggplot2` package
 
 <i class="fas fa-book"></i> Hadley Wickham. ggplot2: elegant graphics for data analysis. Springer, 2009.
-
+<small><br>
 "The grammar tells us that a __statistical graphic is a mapping from data to aesthetic attributes__ (colour, shape, size) __of geometric objects__ (points, lines, bars). The plot may also contain __statistical transformations__ of the data and is drawn on a specific __coordinate system__. __Facetting__ can be used to generate the same plot for different subsets of the dataset. It is the combination of these independent components that make up a graphic."
 
 ---
@@ -338,24 +351,6 @@ Answer:
 &emsp;
 </div>
 
----
-### Layers: mapping data onto aesthetics
-
-You can override data or mapping in layer.
-
-
-```{r echo=TRUE}
-p <- ggplot(data = iris, mapping = aes(x = Sepal.Width, y = Sepal.Length))
-
-# Override data in layer
-small_iris <- iris[iris$Species %in% "setosa", ]
-p + geom_point(data = small_iris)
-
-# Override mapping in layer (or remove y = NULL or add colour = Species)
-p + geom_point(aes(y = Petal.Width))
-```
-
-<i class="fas fa-info-circle"></i> Note that even though we are mapping `Petal.Width` the graph stills shows `Sepal.Length` in the `y`-axis.
 
 ---
 
