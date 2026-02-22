@@ -394,7 +394,10 @@ ggplot(data_brain,
        aes(x=gene_chr, 
            y=median_expression, 
            colour=median_expression > 20000)) +
-  geom_point()
+  geom_point() +
+  scale_color_manual(
+    values=c("orange2", 
+             "cadetblue3"))
 
 ```
 ]
@@ -407,7 +410,10 @@ ggplot(data_brain,
            colour=median_expression > 20000)) +
   geom_point()+
   theme_classic(base_size = 18) +
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom")  +
+  scale_color_manual(
+    values=c("orange2", 
+             "cadetblue3"))
 
 ```
 
