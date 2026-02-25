@@ -14,7 +14,7 @@ title: "Data Visualization lessons (UPC)"
 - [Basic tools for data visualization: `ggplot2` (Rmd)](T/1/1.Rmd)
 - [Basic tools for data visualization: in bioinformatics (HTML)](/T/2/2.html)
 - [Basic tools for data visualization: in bioinformatics (Rmd)](/T/2/2.Rmd)
-
+- [Prueba](https://raw.githubusercontent.com/marta-coronado/data_visualization/main/T/2/2.Rmd)
 ---
 
 ## 💻 Computer practicals
