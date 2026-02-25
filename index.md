@@ -22,5 +22,7 @@ title: "Data Visualization lessons (UPC)"
 - [Practical 1: First steps with ggplot2](P/1/P1_exercises.html)
 - [Slides for Practical 1](P/1/P1-slides.html)
 - <a href="P/1/P1.Rmd" download>Download the `Rmd` document of practical 1 here</a>.
+- [Practical 1: First steps with ggplot2 - solutions](P/1/_rmd/P1_sol.Rmd)
+
  
 ✍️ *Last update: {{ site.time | date: "%d-%m-%Y" }}*
