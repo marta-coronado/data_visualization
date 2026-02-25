@@ -8,5 +8,5 @@ title: "Data Visualization (UPC)"
 description: "Website of the subject<br>Degree in Bioinformatics (UPC)"
 
 exclude:
-  - "*.Rmd"
+  - "_rmd"
   
