@@ -1,0 +1,124 @@
+---
+title: "**P2** | Basic tools for data visualization"
+subtitle: "<code>ggplot2</code>"
+author: "<b>Marta Coronado Zamora and Miriam Merenciano</b>"
+date: "26 February 2026"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rutgers", "metropolis-fonts", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css", "https://use.fontawesome.com/releases/v5.10.1/css/all.css"]
+    lib_dir: libs
+    self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+      
+---
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# Animations: https://github.com/daneden/animate.css#animations
+# pagedown::chrome_print("P2-slides.html")
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, fig.width = 4, fig.height = 3.5, fig.show = 'hold', message = FALSE)
+library(ggplot2)
+```
+
+class: center, middle, animated, bounceInDown
+
+<style>
+.title-slide {
+  background-image: url(https://fibvisiona.com/sites/default/files/inline-images/logo-upc.png);
+  background-size: 300px;
+}
+</style>
+
+# Keep in touch
+
+| Miriam Merenciano |
+|:-:|
+| <a href="mailto:miriam.merenciano@uab.cat"><i class="fa fa-paper-plane fa-fw"></i> miriam.merenciano@uab.cat </a> | 
+|  <a href="https://lbbe.univ-lyon1.fr/fr/"><i class="fa fa-map-marker fa-fw"></i>&nbsp; Laboratory of Biometry and Evolutionary Biology </a> |
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+# Session content
+
+- Solving doubts
+- Exercise: reproducing `ggplot2` graphics (`P2_exercises.Rmd`)
+- Group project: part B
+
+---
+
+# Practice <i class="fas fa-cogs"></i>
+## Reproducing `ggplot2` plots
+
+- Open the document `P2_exercises.Rmd` in RStudio and complete the exercises.
+- Upload the completed document to [ATENEA](https://atenea.upc.edu/login/index.php) at the end of the session.
+
+---
+
+# Project
+
+## Group project
+
+### Parts
+
+- **Part A** | Understand the origin of our data set and the meaning of the variables
+- **Part B** | Visually describe our data set
+- **Part C** | <i class="fas fa-question-circle"></i>
+
+---
+
+# Project
+
+## Group project
+
+__Part A__
+
+- Describe your data set:
+    + Where and why was the information collected?
+    + Which is the meaning of each variable?
+    + Do the variables have unit? Which one?
+    + Does the data set have a long format?
+
+---
+
+# Project
+
+## Group project
+
+__Part B__
+
+
+- Write the code to:
+    + Read it into R
+    + Reshape the data if necessary into long format
+    + Check the variable classes and update them if necessary
+
+
+---
+# Project
+
+## Group project
+
+__Part B__
+
+- Write the code to:
+    + Read it into R
+    + Reshape the data if necessary into long format
+    + Check the variable classes and update them if necessary
+- Explore your data using `ggplot2` graphics
+    + Represent the __distribution of the variables__: pick one continuous variable and one discrete variable and use histograms or bar graphs to show their distribution
+    + __Summarize the data__: use one geom to summarize data (e.g.: `geom_smooth`, boxplots, ...) of two variables
+- Explain your data with graphics and text
+    + Choose the __three graphics__ that better describe your data
+    + __Customize__ and __annotate__ them
+    + Accompany the figures with your __hypothesis__ and/or __interpretation__
+
+--
+
+Add everything (__tidy__) to the initial `R Markdown` document and __submit it before the next practical session__ (one per group).
+
