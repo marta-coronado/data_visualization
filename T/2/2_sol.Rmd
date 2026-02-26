@@ -305,7 +305,7 @@ The tissue with more expresed genes is testis.
 library(dplyr)
 
 data_gene <- data %>%
-  filter(gene_name %in% "HLA-B")
+  filter(gene_name == "HLA-B")
 ```
 
 <div style="font-size: 60%;">
