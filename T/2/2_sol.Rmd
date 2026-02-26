@@ -105,7 +105,7 @@ class: animated, fadeIn
 
 #### <i class="fas fa-pencil-alt"></i> **Exercise** | Go to the research articles from [Nature Communications](https://www.nature.com/search?journal=ncomms&article_type=research&date_range=last_5_years&order=date_asc) journal and describe the types of visualizations used. How far can you enlarge the previous list?
 
-Use the collaborative **PADLET** available in Atenea:  https://atenea.upc.edu/course/section.php?id=907338
+Use the collaborative **PADLET** available in Atenea:  https://atenea.upc.edu/course/section.php?id=907340
 
 ---
 
