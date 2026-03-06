@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title> </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/rutgers.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link href="libs/htmltools-fill/fill.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/plotly-binding/plotly.js"></script>
+    <script src="libs/typedarray/typedarray.min.js"></script>
+    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main/plotly-latest.min.js"></script>
+    <script src="libs/d3/d3.min.js"></script>
+    <script src="libs/forceNetwork-binding/forceNetwork.js"></script>
+    <link href="libs/dygraphs/dygraph.css" rel="stylesheet" />
+    <script src="libs/dygraphs/dygraph-combined.js"></script>
+    <script src="libs/dygraphs/shapes.js"></script>
+    <script src="libs/moment/moment.js"></script>
+    <script src="libs/moment-timezone/moment-timezone-with-data.js"></script>
+    <script src="libs/moment-fquarter/moment-fquarter.min.js"></script>
+    <script src="libs/dygraphs-binding/dygraphs.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/proj4/proj4.min.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.0/css/all.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# <br>
+]
+.author[
+### 
+]
+
+---
+
+
+
+
+
+
+
+
+
+class: center, middle, animated, bounceInDown
+
+#### Theory lessons &lt;br&gt;
+
+| Marta Coronado Zamora | Jose F. Sánchez | 
+|:-:|:-:|
+| &lt;a href="mailto:Marta.coronado@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; marta.coronado@uab.cat&lt;/a&gt; | &lt;a href="mailto:JoseFrancisco.Sanchez@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt;&amp;nbsp; josefrancisco.sanchez@uab.cat&lt;/a&gt; | 
+| &lt;a href="https://bsky.app/profile/geneticament.bsky.social"&gt;&lt;i class="fab fa-bluesky fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @geneticament&lt;/a&gt; |                 &lt;a href="https://twitter.com/JFSanchezBioinf"&gt;&lt;i class="fab fa-twitter fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @JFSanchezBioinf&lt;/a&gt; |
+| &lt;a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Universitat Autònoma de Barcelona &lt;/a&gt; |    &lt;a href="http://www.germanstrias.org/technology-services/genomica-bioinformatica/"&gt; &lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;Germans Trias i Pujol Research Institute (IGTP)&lt;/a&gt; |
+
+#### Practical lessons &lt;br&gt;
+
+| Miriam Merenciano |
+|:-:|
+| &lt;a href="mailto:miriam.merenciano@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; miriam.merenciano@uab.cat &lt;/a&gt; | 
+|  &lt;a href="https://portalrecerca.uab.cat/es/organisations/grup-de-gen%C3%B2mica-bioinform%C3%A0tica-i-biologia-evolutiva-gbbe/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Universitat Autònoma de Barcelona &lt;/a&gt; |
+
+&lt;style&gt;
+.title-slide {
+  background-image: url('img/1.png');
+  background-size: 100%;
+}
+&lt;/style&gt;
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+# Session content
+
+- Interactive data visualization
+- In R
+    + `htmlwidgets`
+    + `shiny`
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# Get started!
+## Interactive and dynamic data visualization
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+## Example 1
+
+
+
+&lt;img src="3_sol_files/figure-html/unnamed-chunk-1-1.gif" alt="" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Example 2
+
+<div class="plotly html-widget html-fill-item" id="htmlwidget-3f1a7dba741bf94d3633" style="width:648px;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-3f1a7dba741bf94d3633">{"x":{"data":[{"x":[3.7940254450966644,3.6809906556268164,3.1587498285200959,4.0993301562976825,3.0853023521971163,2.6335398473202094,3.3100759930113757,2.8488148736349985,3.2314858313133699,2.9939420450679588,2.443344140046372,3.5602125331291146,3.1888582353745463,3.3185811659560813,3.7467261069384517,4.0847224390037145,2.8071083194109296,2.8393558343569567,4.120787226641542,2.8766506063906259,3.1230701584328973,2.9743524119826992,2.7628523540039867,3.1653183196828425,3.195714676047237,2.6175322269121151,4.0812572446605149,3.0190207459573766,2.8804419458658828,3.0181100381010961,3.2560322165243099,4.0396913096789095,3.5820832842930348,2.9157614843495785,3.6822408118633683,2.7921653017164396,3.3040545722906871,3.884802303432406,2.9360553118387509,3.2036950046605677,3.2336235137236495,2.9357796251727324,2.9666771427490164,3.9670637023386344,3.4153732150271123,3.6545115842375888,3.0443367476975203,2.9459459204926648,3.8508252467512323,3.0238202200422353,3.1042178448294138,2.6718291573166399],"y":[72.301000000000002,42.731000000000002,56.728000000000002,50.728000000000002,52.295000000000002,49.579999999999998,50.43,44.741,50.651000000000003,65.152000000000001,46.462000000000003,55.322000000000003,48.328000000000003,54.790999999999997,71.337999999999994,51.579000000000001,58.039999999999999,52.947000000000003,56.734999999999999,59.448,60.021999999999998,56.006999999999998,46.387999999999998,54.109999999999999,42.591999999999999,45.677999999999997,73.951999999999998,59.442999999999998,48.302999999999997,54.466999999999999,64.164000000000001,72.801000000000002,71.164000000000001,42.082000000000001,52.905999999999999,56.866999999999997,46.859000000000002,76.441999999999993,46.241999999999997,65.528000000000006,63.061999999999998,42.567999999999998,48.158999999999999,49.338999999999999,58.555999999999997,39.613,52.517000000000003,58.420000000000002,73.923000000000002,51.542000000000002,42.384,43.487000000000002],"text":["gdpPercap:  6223.3675<br />lifeExp: 72.301<br />pop:   33333216<br />continent: Africa","gdpPercap:  4797.2313<br />lifeExp: 42.731<br />pop:   12420476<br />continent: Africa","gdpPercap:  1441.2849<br />lifeExp: 56.728<br />pop:    8078314<br />continent: Africa","gdpPercap: 12569.8518<br />lifeExp: 50.728<br />pop:    1639131<br />continent: Africa","gdpPercap:  1217.0330<br />lifeExp: 52.295<br />pop:   14326203<br />continent: Africa","gdpPercap:   430.0707<br />lifeExp: 49.580<br />pop:    8390505<br />continent: Africa","gdpPercap:  2042.0952<br />lifeExp: 50.430<br />pop:   17696293<br />continent: Africa","gdpPercap:   706.0165<br />lifeExp: 44.741<br />pop:    4369038<br />continent: Africa","gdpPercap:  1704.0637<br />lifeExp: 50.651<br />pop:   10238807<br />continent: Africa","gdpPercap:   986.1479<br />lifeExp: 65.152<br />pop:     710960<br />continent: Africa","gdpPercap:   277.5519<br />lifeExp: 46.462<br />pop:   64606759<br />continent: Africa","gdpPercap:  3632.5578<br />lifeExp: 55.322<br />pop:    3800610<br />continent: Africa","gdpPercap:  1544.7501<br />lifeExp: 48.328<br />pop:   18013409<br />continent: Africa","gdpPercap:  2082.4816<br />lifeExp: 54.791<br />pop:     496374<br />continent: Africa","gdpPercap:  5581.1810<br />lifeExp: 71.338<br />pop:   80264543<br />continent: Africa","gdpPercap: 12154.0897<br />lifeExp: 51.579<br />pop:     551201<br />continent: Africa","gdpPercap:   641.3695<br />lifeExp: 58.040<br />pop:    4906585<br />continent: Africa","gdpPercap:   690.8056<br />lifeExp: 52.947<br />pop:   76511887<br />continent: Africa","gdpPercap: 13206.4845<br />lifeExp: 56.735<br />pop:    1454867<br />continent: Africa","gdpPercap:   752.7497<br />lifeExp: 59.448<br />pop:    1688359<br />continent: Africa","gdpPercap:  1327.6089<br />lifeExp: 60.022<br />pop:   22873338<br />continent: Africa","gdpPercap:   942.6542<br />lifeExp: 56.007<br />pop:    9947814<br />continent: Africa","gdpPercap:   579.2317<br />lifeExp: 46.388<br />pop:    1472041<br />continent: Africa","gdpPercap:  1463.2493<br />lifeExp: 54.110<br />pop:   35610177<br />continent: Africa","gdpPercap:  1569.3314<br />lifeExp: 42.592<br />pop:    2012649<br />continent: Africa","gdpPercap:   414.5073<br />lifeExp: 45.678<br />pop:    3193942<br />continent: Africa","gdpPercap: 12057.4993<br />lifeExp: 73.952<br />pop:    6036914<br />continent: Africa","gdpPercap:  1044.7701<br />lifeExp: 59.443<br />pop:   19167654<br />continent: Africa","gdpPercap:   759.3499<br />lifeExp: 48.303<br />pop:   13327079<br />continent: Africa","gdpPercap:  1042.5816<br />lifeExp: 54.467<br />pop:   12031795<br />continent: Africa","gdpPercap:  1803.1515<br />lifeExp: 64.164<br />pop:    3270065<br />continent: Africa","gdpPercap: 10956.9911<br />lifeExp: 72.801<br />pop:    1250882<br />continent: Africa","gdpPercap:  3820.1752<br />lifeExp: 71.164<br />pop:   33757175<br />continent: Africa","gdpPercap:   823.6856<br />lifeExp: 42.082<br />pop:   19951656<br />continent: Africa","gdpPercap:  4811.0604<br />lifeExp: 52.906<br />pop:    2055080<br />continent: Africa","gdpPercap:   619.6769<br />lifeExp: 56.867<br />pop:   12894865<br />continent: Africa","gdpPercap:  2013.9773<br />lifeExp: 46.859<br />pop:  135031164<br />continent: Africa","gdpPercap:  7670.1226<br />lifeExp: 76.442<br />pop:     798094<br />continent: Africa","gdpPercap:   863.0885<br />lifeExp: 46.242<br />pop:    8860588<br />continent: Africa","gdpPercap:  1598.4351<br />lifeExp: 65.528<br />pop:     199579<br />continent: Africa","gdpPercap:  1712.4721<br />lifeExp: 63.062<br />pop:   12267493<br />continent: Africa","gdpPercap:   862.5408<br />lifeExp: 42.568<br />pop:    6144562<br />continent: Africa","gdpPercap:   926.1411<br />lifeExp: 48.159<br />pop:    9118773<br />continent: Africa","gdpPercap:  9269.6578<br />lifeExp: 49.339<br />pop:   43997828<br />continent: Africa","gdpPercap:  2602.3950<br />lifeExp: 58.556<br />pop:   42292929<br />continent: Africa","gdpPercap:  4513.4806<br />lifeExp: 39.613<br />pop:    1133066<br />continent: Africa","gdpPercap:  1107.4822<br />lifeExp: 52.517<br />pop:   38139640<br />continent: Africa","gdpPercap:   882.9699<br />lifeExp: 58.420<br />pop:    5701579<br />continent: Africa","gdpPercap:  7092.9230<br />lifeExp: 73.923<br />pop:   10276158<br />continent: Africa","gdpPercap:  1056.3801<br />lifeExp: 51.542<br />pop:   29170398<br />continent: Africa","gdpPercap:  1271.2116<br />lifeExp: 42.384<br />pop:   11746035<br />continent: Africa","gdpPercap:   469.7093<br />lifeExp: 43.487<br />pop:   12311143<br />continent: Africa"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.80000000000000004,"size":[6.7752717325492302,5.5989004118630001,5.2403533070783466,4.4039576839973833,5.7356199392207996,5.2690143958143745,5.9564773609874049,4.8422259478740974,5.4285263116604412,4.1516985016395616,7.9562662998770968,4.7671332830722601,5.9761166381701099,4.0630571938388131,8.4363687173296391,4.0881362755000454,4.9086539137274148,8.32592567062337,4.3626259687113649,4.4145446751277628,6.2577023306009796,5.4044519713261234,4.366601197011196,6.8764961358924266,4.4803007102230001,4.6801077545067349,5.0369392016926247,6.0461636385333,5.6651779774839266,5.5697344023561026,4.6914832316617332,4.3131500431206629,6.7943767241052386,6.0925324617448933,4.4884533308975465,5.6338762963755968,9.8227139332733113,4.1821590023924538,5.3111594952501031,3.7795275590551185,5.5874769596414557,5.0484803839022625,5.3338208539114369,7.2238082937782924,7.156106546896897,4.282361176813005,6.9852002740989851,5.0002880392083817,5.4315910179617095,6.5807690784340016,5.5479846257867891,5.5907437114111733],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Africa","legendgroup":"Africa","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.1065097720176862,3.5823062593168782,3.957406173408569,4.5601366924251883,4.1196398143870931,3.8455061110473117,3.9843049975871763,3.9517309708016475,3.7799840633073747,3.8371629195761865,3.7580298117512663,3.7148366998460376,3.0797733480287044,3.550024106620056,3.8645633037284566,4.0783688975107708,3.4392254438054342,3.991632953509189,3.6204315729333021,3.8697540590018766,4.2862028478952521,4.2554777630339444,4.6329798832790043,4.0257752637018411,4.0575065679833457],"y":[75.319999999999993,65.554000000000002,72.390000000000001,80.653000000000006,78.552999999999997,72.888999999999996,78.781999999999996,78.272999999999996,72.234999999999999,74.994,71.878,70.259,60.915999999999997,70.197999999999993,72.566999999999993,76.194999999999993,72.899000000000001,75.537000000000006,71.751999999999995,71.421000000000006,78.745999999999995,69.819000000000003,78.242000000000004,76.384,73.747],"text":["gdpPercap: 12779.3796<br />lifeExp: 75.320<br />pop:   40301927<br />continent: Americas","gdpPercap:  3822.1371<br />lifeExp: 65.554<br />pop:    9119152<br />continent: Americas","gdpPercap:  9065.8008<br />lifeExp: 72.390<br />pop:  190010647<br />continent: Americas","gdpPercap: 36319.2350<br />lifeExp: 80.653<br />pop:   33390141<br />continent: Americas","gdpPercap: 13171.6388<br />lifeExp: 78.553<br />pop:   16284741<br />continent: Americas","gdpPercap:  7006.5804<br />lifeExp: 72.889<br />pop:   44227550<br />continent: Americas","gdpPercap:  9645.0614<br />lifeExp: 78.782<br />pop:    4133884<br />continent: Americas","gdpPercap:  8948.1029<br />lifeExp: 78.273<br />pop:   11416987<br />continent: Americas","gdpPercap:  6025.3748<br />lifeExp: 72.235<br />pop:    9319622<br />continent: Americas","gdpPercap:  6873.2623<br />lifeExp: 74.994<br />pop:   13755680<br />continent: Americas","gdpPercap:  5728.3535<br />lifeExp: 71.878<br />pop:    6939688<br />continent: Americas","gdpPercap:  5186.0500<br />lifeExp: 70.259<br />pop:   12572928<br />continent: Americas","gdpPercap:  1201.6372<br />lifeExp: 60.916<br />pop:    8502814<br />continent: Americas","gdpPercap:  3548.3308<br />lifeExp: 70.198<br />pop:    7483763<br />continent: Americas","gdpPercap:  7320.8803<br />lifeExp: 72.567<br />pop:    2780132<br />continent: Americas","gdpPercap: 11977.5750<br />lifeExp: 76.195<br />pop:  108700891<br />continent: Americas","gdpPercap:  2749.3210<br />lifeExp: 72.899<br />pop:    5675356<br />continent: Americas","gdpPercap:  9809.1856<br />lifeExp: 75.537<br />pop:    3242173<br />continent: Americas","gdpPercap:  4172.8385<br />lifeExp: 71.752<br />pop:    6667147<br />continent: Americas","gdpPercap:  7408.9056<br />lifeExp: 71.421<br />pop:   28674757<br />continent: Americas","gdpPercap: 19328.7090<br />lifeExp: 78.746<br />pop:    3942491<br />continent: Americas","gdpPercap: 18008.5092<br />lifeExp: 69.819<br />pop:    1056608<br />continent: Americas","gdpPercap: 42951.6531<br />lifeExp: 78.242<br />pop:  301139947<br />continent: Americas","gdpPercap: 10611.4630<br />lifeExp: 76.384<br />pop:    3447496<br />continent: Americas","gdpPercap: 11415.8057<br />lifeExp: 73.747<br />pop:   26084662<br />continent: Americas"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(163,165,0,1)","opacity":0.80000000000000004,"size":[7.0752836928954501,5.333853876564663,10.949722028706249,6.7778440362522812,5.8668180179899734,7.2328291141492445,4.8118234074533222,5.5226039735491259,5.3512237886724172,5.69571313317988,5.1306777542305024,5.6102133034773436,5.2791910995855069,5.1841532973733377,4.6155666029278022,9.2006306129298405,4.9973754404969783,4.687331723294788,5.1030785274449162,6.5567034863678497,4.7864012116365817,4.2613288143832744,12.807919245623044,4.7174623155002786,6.4273871341173354],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(163,165,0,1)"}},"hoveron":"points","name":"Americas","legendgroup":"Americas","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2.9888176454912858,4.4741586701859664,3.1434063610570009,3.2339547372751722,3.6954041667466049,4.5990636726886356,3.3895577312128795,3.5490831898821575,4.0646718823630357,3.6504106831196688,4.406936435530084,4.5004569709846161,3.6550866594992835,3.2022336270366805,4.3682522837381041,4.6749253140699576,4.0195756382230385,4.095227107013149,3.4907690059237622,2.9749719942980688,3.0379679438446519,4.3486201061894318,3.4159656754035375,3.5038561648270914,4.3355548175826542,4.6734188707962172,3.5988009435983197,3.6216485631534296,4.4581583777244909,3.8726454573379581,3.3876703191654678,3.4807755960325997,3.3580814739680283],"y":[43.828000000000003,75.635000000000005,64.061999999999998,59.722999999999999,72.960999999999999,82.207999999999998,64.697999999999993,70.650000000000006,70.963999999999999,59.545000000000002,80.745000000000005,82.602999999999994,72.534999999999997,67.296999999999997,78.623000000000005,77.587999999999994,71.992999999999995,74.241,66.802999999999997,62.069000000000003,63.784999999999997,75.640000000000001,65.483000000000004,71.688000000000002,72.777000000000001,79.971999999999994,72.396000000000001,74.143000000000001,78.400000000000006,70.616,74.248999999999995,73.421999999999997,62.698],"text":["gdpPercap:   974.5803<br />lifeExp: 43.828<br />pop:   31889923<br />continent: Asia","gdpPercap: 29796.0483<br />lifeExp: 75.635<br />pop:     708573<br />continent: Asia","gdpPercap:  1391.2538<br />lifeExp: 64.062<br />pop:  150448339<br />continent: Asia","gdpPercap:  1713.7787<br />lifeExp: 59.723<br />pop:   14131858<br />continent: Asia","gdpPercap:  4959.1149<br />lifeExp: 72.961<br />pop: 1318683096<br />continent: Asia","gdpPercap: 39724.9787<br />lifeExp: 82.208<br />pop:    6980412<br />continent: Asia","gdpPercap:  2452.2104<br />lifeExp: 64.698<br />pop: 1110396331<br />continent: Asia","gdpPercap:  3540.6516<br />lifeExp: 70.650<br />pop:  223547000<br />continent: Asia","gdpPercap: 11605.7145<br />lifeExp: 70.964<br />pop:   69453570<br />continent: Asia","gdpPercap:  4471.0619<br />lifeExp: 59.545<br />pop:   27499638<br />continent: Asia","gdpPercap: 25523.2771<br />lifeExp: 80.745<br />pop:    6426679<br />continent: Asia","gdpPercap: 31656.0681<br />lifeExp: 82.603<br />pop:  127467972<br />continent: Asia","gdpPercap:  4519.4612<br />lifeExp: 72.535<br />pop:    6053193<br />continent: Asia","gdpPercap:  1593.0655<br />lifeExp: 67.297<br />pop:   23301725<br />continent: Asia","gdpPercap: 23348.1397<br />lifeExp: 78.623<br />pop:   49044790<br />continent: Asia","gdpPercap: 47306.9898<br />lifeExp: 77.588<br />pop:    2505559<br />continent: Asia","gdpPercap: 10461.0587<br />lifeExp: 71.993<br />pop:    3921278<br />continent: Asia","gdpPercap: 12451.6558<br />lifeExp: 74.241<br />pop:   24821286<br />continent: Asia","gdpPercap:  3095.7723<br />lifeExp: 66.803<br />pop:    2874127<br />continent: Asia","gdpPercap:   944.0000<br />lifeExp: 62.069<br />pop:   47761980<br />continent: Asia","gdpPercap:  1091.3598<br />lifeExp: 63.785<br />pop:   28901790<br />continent: Asia","gdpPercap: 22316.1929<br />lifeExp: 75.640<br />pop:    3204897<br />continent: Asia","gdpPercap:  2605.9476<br />lifeExp: 65.483<br />pop:  169270617<br />continent: Asia","gdpPercap:  3190.4810<br />lifeExp: 71.688<br />pop:   91077287<br />continent: Asia","gdpPercap: 21654.8319<br />lifeExp: 72.777<br />pop:   27601038<br />continent: Asia","gdpPercap: 47143.1796<br />lifeExp: 79.972<br />pop:    4553009<br />continent: Asia","gdpPercap:  3970.0954<br />lifeExp: 72.396<br />pop:   20378239<br />continent: Asia","gdpPercap:  4184.5481<br />lifeExp: 74.143<br />pop:   19314747<br />continent: Asia","gdpPercap: 28718.2768<br />lifeExp: 78.400<br />pop:   23174294<br />continent: Asia","gdpPercap:  7458.3963<br />lifeExp: 70.616<br />pop:   65068149<br />continent: Asia","gdpPercap:  2441.5764<br />lifeExp: 74.249<br />pop:   85262356<br />continent: Asia","gdpPercap:  3025.3498<br />lifeExp: 73.422<br />pop:    4018332<br />continent: Asia","gdpPercap:  2280.7699<br />lifeExp: 62.698<br />pop:   22211743<br />continent: Asia"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,125,1)","opacity":0.80000000000000004,"size":[6.7092983513552849,4.1508288847181953,10.158865608179935,5.7221180107506537,22.677165354330711,5.1347534580541501,21.120368095307143,11.557396830375804,8.1105713155374861,6.4987952406877376,5.0782402616746616,9.6507758736364799,5.0386912985713304,6.2810035011451255,7.4168446506103951,4.569838394810894,4.7835439230220365,6.3619616591074761,4.6306565167244802,7.368763875897594,6.5677527377566554,4.6817536552960464,10.5466615830696,8.7408659686259185,6.5038406176847667,4.8654178527954128,6.1173758740791646,6.0549352830716545,6.2740949140912097,7.9711999339905422,8.5795132943757064,4.7965509761407246,6.2212794811128056],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,191,125,1)"}},"hoveron":"points","name":"Asia","legendgroup":"Asia","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[3.7735692087621691,4.5578258006221848,4.5275345915133105,3.8719404594797928,4.0286034909483179,4.1649242825131747,4.3585688446278343,4.5475091108168488,4.5212307459814749,4.4838726922507623,4.5074561155365247,4.4399388911990529,4.2554882582210949,4.5584780356339154,4.6093381996914395,4.4559059795027833,3.9663246195778949,4.5658234281049346,4.6933504280025318,4.1872364943512697,4.3119582019159575,4.0337644468812863,3.9906289409349966,4.271337680163577,4.4110850532178922,4.4597100052953031,4.5296837260525233,4.574105601810623,3.927281872119107,4.5211807429313629],"y":[76.423000000000002,79.828999999999994,79.441000000000003,74.852000000000004,73.004999999999995,75.748000000000005,76.486000000000004,78.331999999999994,79.313000000000002,80.656999999999996,79.406000000000006,79.483000000000004,73.337999999999994,81.757000000000005,78.885000000000005,80.546000000000006,74.543000000000006,79.762,80.195999999999998,75.563000000000002,78.097999999999999,72.475999999999999,74.001999999999995,74.662999999999997,77.926000000000002,80.941000000000003,80.884,81.700999999999993,71.777000000000001,79.424999999999997],"text":["gdpPercap:  5937.0295<br />lifeExp: 76.423<br />pop:    3600523<br />continent: Europe","gdpPercap: 36126.4927<br />lifeExp: 79.829<br />pop:    8199783<br />continent: Europe","gdpPercap: 33692.6051<br />lifeExp: 79.441<br />pop:   10392226<br />continent: Europe","gdpPercap:  7446.2988<br />lifeExp: 74.852<br />pop:    4552198<br />continent: Europe","gdpPercap: 10680.7928<br />lifeExp: 73.005<br />pop:    7322858<br />continent: Europe","gdpPercap: 14619.2227<br />lifeExp: 75.748<br />pop:    4493312<br />continent: Europe","gdpPercap: 22833.3085<br />lifeExp: 76.486<br />pop:   10228744<br />continent: Europe","gdpPercap: 35278.4187<br />lifeExp: 78.332<br />pop:    5468120<br />continent: Europe","gdpPercap: 33207.0844<br />lifeExp: 79.313<br />pop:    5238460<br />continent: Europe","gdpPercap: 30470.0167<br />lifeExp: 80.657<br />pop:   61083916<br />continent: Europe","gdpPercap: 32170.3744<br />lifeExp: 79.406<br />pop:   82400996<br />continent: Europe","gdpPercap: 27538.4119<br />lifeExp: 79.483<br />pop:   10706290<br />continent: Europe","gdpPercap: 18008.9444<br />lifeExp: 73.338<br />pop:    9956108<br />continent: Europe","gdpPercap: 36180.7892<br />lifeExp: 81.757<br />pop:     301931<br />continent: Europe","gdpPercap: 40675.9964<br />lifeExp: 78.885<br />pop:    4109086<br />continent: Europe","gdpPercap: 28569.7197<br />lifeExp: 80.546<br />pop:   58147733<br />continent: Europe","gdpPercap:  9253.8961<br />lifeExp: 74.543<br />pop:     684736<br />continent: Europe","gdpPercap: 36797.9333<br />lifeExp: 79.762<br />pop:   16570613<br />continent: Europe","gdpPercap: 49357.1902<br />lifeExp: 80.196<br />pop:    4627926<br />continent: Europe","gdpPercap: 15389.9247<br />lifeExp: 75.563<br />pop:   38518241<br />continent: Europe","gdpPercap: 20509.6478<br />lifeExp: 78.098<br />pop:   10642836<br />continent: Europe","gdpPercap: 10808.4756<br />lifeExp: 72.476<br />pop:   22276056<br />continent: Europe","gdpPercap:  9786.5347<br />lifeExp: 74.002<br />pop:   10150265<br />continent: Europe","gdpPercap: 18678.3144<br />lifeExp: 74.663<br />pop:    5447502<br />continent: Europe","gdpPercap: 25768.2576<br />lifeExp: 77.926<br />pop:    2009245<br />continent: Europe","gdpPercap: 28821.0637<br />lifeExp: 80.941<br />pop:   40448191<br />continent: Europe","gdpPercap: 33859.7484<br />lifeExp: 80.884<br />pop:    9031088<br />continent: Europe","gdpPercap: 37506.4191<br />lifeExp: 81.701<br />pop:    7554661<br />continent: Europe","gdpPercap:  8458.2764<br />lifeExp: 71.777<br />pop:   71158647<br />continent: Europe","gdpPercap: 33203.2613<br />lifeExp: 79.425<br />pop:   60776238<br />continent: Europe"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,176,246,1)","opacity":0.80000000000000004,"size":[4.7393036097654502,5.2515712457990968,5.4410784978691735,4.8653167028921844,5.1685528258485842,4.8579469438752234,5.4276996527368331,4.9741078643628294,4.9477814048195228,7.8404337662196868,8.498091237446733,5.4664828069929365,5.4051430840065446,3.9460291298414996,4.8085649745634003,7.7413040551619607,4.1420303205279438,5.8852844160763711,4.8747213942514058,7.0011551525914504,5.4613810121458615,6.2248439161044908,5.421238450332476,4.9717681273532666,4.4796425578879777,7.0812884751230953,5.3261618194654057,5.1909724557450065,8.1635636391520627,7.8301599085784517],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,176,246,1)"}},"hoveron":"points","name":"Europe","legendgroup":"Europe","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[4.5370047214526892,4.4011421122881123],"y":[81.234999999999999,80.203999999999994],"text":["gdpPercap: 34435.3674<br />lifeExp: 81.235<br />pop:   20434176<br />continent: Oceania","gdpPercap: 25185.0091<br />lifeExp: 80.204<br />pop:    4115771<br />continent: Oceania"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(231,107,243,1)","opacity":0.80000000000000004,"size":[6.1206139909462598,4.8094443919586789],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(231,107,243,1)"}},"hoveron":"points","name":"Oceania","legendgroup":"Oceania","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":37.260273972602747,"l":37.260273972602747},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2.330843825648564,4.8058507424003398],"tickmode":"array","ticktext":["300","1000","3000","10000","30000"],"tickvals":[2.4771212547196626,3,3.4771212547196626,4,4.4771212547196626],"categoryorder":"array","categoryarray":["300","1000","3000","10000","30000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"gdpPercap","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[37.463499999999996,84.752499999999998],"tickmode":"array","ticktext":["40","50","60","70","80"],"tickvals":[40,50,60,70,80],"categoryorder":"array","categoryarray":["40","50","60","70","80"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"lifeExp","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716894984},"title":{"text":"pop<br />continent","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"c34628b42f1":{"x":{},"y":{},"size":{},"colour":{},"type":"scatter"}},"cur_data":"c34628b42f1","visdat":{"c34628b42f1":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+---
+
+## Example 3
+
+&lt;center&gt;
+&lt;img src="img/crosstalk2022_10_10D9_39_7.gif" width=100%&gt;
+&lt;/center&gt;
+
+[Link](https://bwlewis.github.io/crosstool/)
+
+---
+
+## Example 4
+
+&lt;center&gt;
+&lt;img src="img/movies2022_10_10D9_43_14.png" width=60%&gt;
+&lt;/center&gt;
+
+[Link](https://shiny.rstudio.com/gallery/movie-explorer.html)
+
+
+---
+
+## Example 4
+
+&lt;center&gt;
+&lt;img src="img/shinyMovies2022_10_10D9_46_53.gif" width=80%&gt;
+
+&lt;/center&gt;
+
+[Link](https://shiny.rstudio.com/gallery/movie-explorer.html)
+
+
+---
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Describe the previous visualizations. Are they dynamic? And interactive? If so, what types of interaction do you identify?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Describe the previous visualizations. Are they dynamic? And interactive? If so, what types of interaction do you identify?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+&lt;br&gt;
+- Dynamic: only movement (e.g.: gif)&lt;br&gt;
+
+- Interactive: you can interact with the visualization (buttons, drag, select, ...)
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+## Types of interaction
+
+- **Interactive plot area**
+    + Action: hover, click, brush
+    + Response: zoom, identify, link, add/remove
+- **Interactive controls** (outside the plot)
+    + Action: click, drag
+    + Response: choose data set, variables, parameters and redraw
+
+---
+
+## How interaction works
+.pull-left[
+- **Basic framework**: web browsers  
+  `html` + `css` + `JavaScript`
+- Options for interaction:
+    + **Client-side**  
+      Static `html` page with `JavaScript` code
+      Executed within the browser
+      
+    + **Server-side**  
+      Dynamic `html` page  
+      Executed in the host machine
+]
+.pull-right[
+![](img/server2019_9_23D9_51_45.png)]
+
+---
+
+
+## In R
+
+In recent years there has been a shift from using static R graphics to using interactive JavaScript web components for data analysis and data visualization: we need **R Bindings to JavaScript libraries**
+
+--
+- The `htmlwidgets` package
+  
+  Provides a framework for creating R bindings to `JavaScript` libraries. HTML Widgets can be:
+  + Used at the R console for data analysis just like conventional R plots
+  + Embedded within R Markdown documents
+  + Incorporated into Shiny web applications
+  + Saved as standalone web pages
+  
+  Executed in browser (client-side)  
+  Standalone `html` file
+  
+--
+
+- `Shiny` applications
+  
+  Framework for interactive web applications in `R`  
+  Executed in host machine (server-side)  
+  Needs `R` running
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# `htmlwidgets`
+
+---
+
+
+layout: true
+class: animated, fadeIn
+
+---
+
+## What are `htmlwidgets`?
+
+.pull-left[
+Bridge between `R` and `JavaScript` libraries:
+
+
+| `R` package | `JavaScript` library |
+|-------------|----------------------|
+| plotly      | plotly.js (D3.js)    |
+| networkD3   | D3.js                |
+| dygraphs    | Dygraphs.js
+| leaflet     | leaflet.js           |
+| ...         | ...                  |
+
+[Full list of `htmlwidgets`](http://www.htmlwidgets.org/)
+]
+.pull-right[
+&lt;center&gt;
+&lt;img src="img/htmlwdigets.JPG" width=100%&gt;
+]
+---
+
+
+## Example: `plotly`
+
+<div class="plotly html-widget html-fill-item" id="htmlwidget-0a67906bcb65a8ff3696" style="width:504px;height:360px;"></div>
+<script type="application/json" data-for="htmlwidget-0a67906bcb65a8ff3696">{"x":{"data":[{"orientation":"v","width":[0.11250000000000004,0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071],"base":[0,0,0,0,0],"x":[0.60625000000000007,1.6062500000000002,2.6062500000000002,3.6062500000000002,4.6062500000000002],"y":[210,96,84,205,146],"text":["count:  210<br />cut: Fair<br />clarity: I1","count:   96<br />cut: Good<br />clarity: I1","count:   84<br />cut: Very Good<br />clarity: I1","count:  205<br />cut: Premium<br />clarity: I1","count:  146<br />cut: Ideal<br />clarity: I1"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(68,1,84,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"I1","legendgroup":"I1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11250000000000004,0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071],"base":[0,0,0,0,0],"x":[0.71875,1.71875,2.71875,3.71875,4.71875],"y":[466,1081,2100,2949,2598],"text":["count:  466<br />cut: Fair<br />clarity: SI2","count: 1081<br />cut: Good<br />clarity: SI2","count: 2100<br />cut: Very Good<br />clarity: SI2","count: 2949<br />cut: Premium<br />clarity: SI2","count: 2598<br />cut: Ideal<br />clarity: SI2"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(70,51,126,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"SI2","legendgroup":"SI2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11250000000000004,0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071],"base":[0,0,0,0,0],"x":[0.83125000000000004,1.83125,2.8312499999999998,3.8312499999999998,4.8312499999999998],"y":[408,1560,3240,3575,4282],"text":["count:  408<br />cut: Fair<br />clarity: SI1","count: 1560<br />cut: Good<br />clarity: SI1","count: 3240<br />cut: Very Good<br />clarity: SI1","count: 3575<br />cut: Premium<br />clarity: SI1","count: 4282<br />cut: Ideal<br />clarity: SI1"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(54,92,141,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"SI1","legendgroup":"SI1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11250000000000004,0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071],"base":[0,0,0,0,0],"x":[0.94374999999999998,1.9437500000000001,2.9437500000000001,3.9437500000000001,4.9437499999999996],"y":[261,978,2591,3357,5071],"text":["count:  261<br />cut: Fair<br />clarity: VS2","count:  978<br />cut: Good<br />clarity: VS2","count: 2591<br />cut: Very Good<br />clarity: VS2","count: 3357<br />cut: Premium<br />clarity: VS2","count: 5071<br />cut: Ideal<br />clarity: VS2"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(39,127,142,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"VS2","legendgroup":"VS2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11249999999999993,0.11249999999999982,0.11249999999999982,0.11250000000000071,0.11250000000000071],"base":[0,0,0,0,0],"x":[1.0562499999999999,2.0562499999999999,3.0562499999999999,4.0562500000000004,5.0562500000000004],"y":[170,648,1775,1989,3589],"text":["count:  170<br />cut: Fair<br />clarity: VS1","count:  648<br />cut: Good<br />clarity: VS1","count: 1775<br />cut: Very Good<br />clarity: VS1","count: 1989<br />cut: Premium<br />clarity: VS1","count: 3589<br />cut: Ideal<br />clarity: VS1"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(31,161,135,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"VS1","legendgroup":"VS1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071,0.11250000000000071],"base":[0,0,0,0,0],"x":[1.16875,2.1687500000000002,3.1687500000000002,4.1687500000000002,5.1687500000000002],"y":[69,286,1235,870,2606],"text":["count:   69<br />cut: Fair<br />clarity: VVS2","count:  286<br />cut: Good<br />clarity: VVS2","count: 1235<br />cut: Very Good<br />clarity: VVS2","count:  870<br />cut: Premium<br />clarity: VVS2","count: 2606<br />cut: Ideal<br />clarity: VVS2"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(74,193,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"VVS2","legendgroup":"VVS2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071,0.11250000000000071],"base":[0,0,0,0,0],"x":[1.28125,2.28125,3.28125,4.28125,5.28125],"y":[17,186,789,616,2047],"text":["count:   17<br />cut: Fair<br />clarity: VVS1","count:  186<br />cut: Good<br />clarity: VVS1","count:  789<br />cut: Very Good<br />clarity: VVS1","count:  616<br />cut: Premium<br />clarity: VVS1","count: 2047<br />cut: Ideal<br />clarity: VVS1"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(159,218,58,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"VVS1","legendgroup":"VVS1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.11249999999999982,0.11249999999999982,0.11249999999999982,0.11250000000000071,0.11250000000000071],"base":[0,0,0,0,0],"x":[1.3937499999999998,2.3937499999999998,3.3937499999999998,4.3937499999999998,5.3937499999999998],"y":[9,71,268,230,1212],"text":["count:    9<br />cut: Fair<br />clarity: IF","count:   71<br />cut: Good<br />clarity: IF","count:  268<br />cut: Very Good<br />clarity: IF","count:  230<br />cut: Premium<br />clarity: IF","count: 1212<br />cut: Ideal<br />clarity: IF"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(253,231,37,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"IF","legendgroup":"IF","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":37.260273972602747,"l":48.949771689497737},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,5.5999999999999996],"tickmode":"array","ticktext":["Fair","Good","Very Good","Premium","Ideal"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["Fair","Good","Very Good","Premium","Ideal"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"cut","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-253.55000000000001,5324.5500000000002],"tickmode":"array","ticktext":["0","1000","2000","3000","4000","5000"],"tickvals":[0,1000,2000.0000000000002,3000,4000,5000],"categoryorder":"array","categoryarray":["0","1000","2000","3000","4000","5000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716894984},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"clarity","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"c342a6c82f":{"x":{},"fill":{},"type":"bar"}},"cur_data":"c342a6c82f","visdat":{"c342a6c82f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+
+---
+
+## Example: `networkD3`
+
+<div class="forceNetwork html-widget html-fill-item" id="htmlwidget-17575d9dc8e740eca1a2" style="width:1440px;height:720px;"></div>
+<script type="application/json" data-for="htmlwidget-17575d9dc8e740eca1a2">{"x":{"links":{"source":[0,0,0,0,1,1,2,2,3],"target":[1,2,3,9,4,5,6,7,8],"value":[1,1,1,1,1,1,1,1,1],"colour":["#666","#666","#666","#666","#666","#666","#666","#666","#666"]},"nodes":{"name":["A","B","C","D","E","F","G","H","I","J"],"group":[1,1,1,1,1,1,1,1,1,1],"nodesize":[8,8,8,8,8,8,8,8,8,8]},"options":{"NodeID":"name","Group":"group","colourScale":"d3.scaleOrdinal(['#3182bd'])","fontSize":7,"fontFamily":"serif","clickTextSize":17.5,"linkDistance":50,"linkWidth":"'1.5px'.toString()","charge":-30,"opacity":0.6,"zoom":false,"legend":false,"arrows":false,"nodesize":true,"radiusCalculation":"d.nodesize","bounded":false,"opacityNoHover":1,"clickAction":null}},"evals":[],"jsHooks":[]}</script>
+
+&lt;center&gt;
+
+
+---
+
+## Example: `dygraphs`
+
+<div class="dygraphs html-widget html-fill-item" id="htmlwidget-cc8ec41eae40f9c388dd" style="width:504px;height:360px;"></div>
+<script type="application/json" data-for="htmlwidget-cc8ec41eae40f9c388dd">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
+
+---
+
+## Example: `leaflet`
+
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-84925829d012ca92bf1a" style="width:504px;height:360px;"></div>
+<script type="application/json" data-for="htmlwidget-84925829d012ca92bf1a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[41.3889273,2.112642,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"We are here!",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[41.3889273,41.3889273],"lng":[2.112642,2.112642]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Tranform the following graphics made with `ggplot2` into `plotly` interactive versions. What kind of interaction does `plotly` add?
+
+
+
+
+``` r
+p1 &lt;- ggplot(iris, aes(Sepal.Length, Petal.Length, shape = Species, colour = Species)) +
+  geom_point()
+
+p2 &lt;- ggplot(iris, aes(Species, Petal.Length, fill = Species)) +
+  geom_boxplot()
+```
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Tranform the following graphics made with `ggplot2` into `plotly` interactive versions. What kind of interaction does `plotly` add?
+
+
+
+
+``` r
+p1 &lt;- ggplot(iris, aes(Sepal.Length, Petal.Length, shape = Species, colour = Species)) +
+  geom_point()
+
+p2 &lt;- ggplot(iris, aes(Species, Petal.Length, fill = Species)) +
+  geom_boxplot()
+```
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+&lt;br&gt;
+
+&lt;code&gt;library(plotly)&lt;/code&gt;&lt;br&gt;
+
+&lt;code&gt;ggplotly(p1)&lt;/code&gt;&lt;br&gt;
+
+&lt;code&gt;ggplotly(p2)&lt;/code&gt;
+&amp;emsp;
+&lt;/div&gt;
+
+---
+layout: false
+class: left, bottom, inverse, animated, bounceInDown
+
+# `Shiny`
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+
+## What is Shiny?
+
+
+- Framework to create dynamic, reactive html pages without `html`, `css` or `JavaScript`
+    + There isn't any static html output
+    + Needs an R session running
+- Creates web applications
+    + Interactive visualizations
+    + Much more
+
+[Gallery of  `Shiny` apps](https://shiny.posit.co/r/gallery/)
+
+---
+
+
+## Syntax
+
+
+``` r
+library(shiny)
+
+# Web page
+ui &lt;- fluidPage()
+
+# Running R session
+server &lt;- function(input, output){}
+
+# Connection ui + server
+shinyApp(ui = ui, server = server)
+```
+
+--
+
+Two basic files: `ui.R` and `server.R` (or have them both in `app.R`)
+
+- `ui`
+    + html specifications (R functions)
+    + input functions
+    + output functions
+- `server`
+    + instructions to build and rebuild R objects
+    + refers to input and output in `ui`
+
+---
+
+### **Let's create a Shiny app!**
+
+First, install the `shiny` package:
+
+
+``` r
+install.packages("shiny")
+library(shiny)
+```
+
+Create a new `Shiny Web App` in RStudio:
+&lt;center&gt;
+&lt;img src="img/35238232-c0e49fca-ff61-11e7-8d54-881d96e3968e.png" width=60%&gt;
+
+---
+
+### **Let's create a Shiny app!**
+
+First, install the `shiny` package:
+
+
+``` r
+install.packages("shiny")
+library(shiny)
+```
+
+As an application name you can type `test_app` and create a Single File (`app.R`) and save it in a Directory:
+
+&lt;center&gt;
+&lt;img src="img/35238280-df3b5536-ff61-11e7-940f-4cb0345728e4.png" width=55%&gt;
+
+--
+&lt;/center&gt;
+**Run the app! &lt;img src="img/35238295-e70a328c-ff61-11e7-8da3-8c62c896e25e.png" width=10% align="middle"&gt;** 
+
+---
+
+## Parts of the UI
+
+UI is &lt;i&gt;de facto&lt;/i&gt; an HTML file.
+
+- In building `myui` (or `ui.R` file) what we really do is to construct an HTML file with R functions.
+- By default, uses [bootstrap](http://getbootstrap.com/), the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+
+Parts of the UI:&lt;br&gt;
+
+--
+
+1. HTML tags&lt;br&gt;
+
+--
+
+2. Layout&lt;br&gt;
+
+--
+3.  Input (control widgets)&lt;br&gt;
+
+--
+
+4.  Output
+
+
+---
+### UI: HTML tags
+
+- You can build UI by using HTML tags
+- Use `names(tags)` to see all available tags
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** |  Modify your `app.R` adding the following code inside `fluidPage()` and run the app again.
+
+
+``` r
+ui &lt;- fluidPage(
+  
+titlePanel(HTML('&lt;h1&gt;Old Faithful Geyser Data&lt;/h1&gt;
+        &lt;hr&gt;&lt;br&gt;
+        &lt;p&gt; I`m a paragraph showing how to write
+        &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italics&lt;/em&gt;.&lt;br&gt;
+        This is a &lt;code&gt;block of code&lt;/code&gt;.&lt;br&gt;
+        I can also put &lt;a href="http://www.google.com"&gt;a link to google&lt;/a&gt;.&lt;br&gt;
+        And I can also add images!&lt;br&gt;
+        &lt;center&gt;&lt;img src="https://ih0.redbubble.net/image.543360195.2115/pp,550x550.jpg" width=10%&gt;&lt;/center&gt;&lt;/p&gt;
+        &lt;h2&gt;The app&lt;/h2&gt;')),
+    # Sidebar with a slider input for number of bins
+```
+
+Which HTML tags are you able to identify? What are they used for?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+### UI: HTML tags
+
+- You can build UI by using HTML tags
+- Use `names(tags)` to see all available tags
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** |  Modify your `app.R` adding the following code inside `fluidPage()` and run the app again.
+
+Which HTML tags are you able to identify? What are they used for?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;h1&lt;/code&gt;/&lt;code&gt;h2&lt;/code&gt;…: headings&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;code&lt;/code&gt;: code text format&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;center&lt;/code&gt;: center the text&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;em&lt;/code&gt;: italics&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;strong&lt;/code&gt;: bold&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hr&lt;/code&gt;: horizontal line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;br&lt;/code&gt;: new line&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p&lt;/code&gt;: paragraph&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt;: link&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;img&lt;/code&gt;: image&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+---
+
+### UI: Layout
+
+- **Panels**
+  + Panel functions are used to put a group of elements together into a single ‘panel’.
+  + There are several panel functions defined in shiny:
+
+`absolutePanel()`,
+`conditionalPanel()`,
+`fixedPanel()`,
+`headerPanel()`,
+`inputPanel()`,
+`mainPanel()`,
+`navlistPanel()`,
+`sidebarPanel()`,
+`tabPanel()`,
+`tabsetPanel()`,
+`titlePanel()`,
+`wellPanel()`,
+
+- **Layouts**
+  + Layout functions are used to organize panels and elements into an existing layout.
+  + There are several layout functions defined in shiny:
+
+&lt;center&gt;
+&lt;img src="img/layout.png" width=50%&gt;
+
+---
+
+### UI: Layout
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Which layouts and panels are used in the `app.R`?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+### UI: Layout
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Which layouts and panels are used in the `app.R`?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sidebarLayout&lt;/code&gt;: layout with sidebar and main content area&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;titlePanel&lt;/code&gt;: adds a title to the Shiny app&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sidebarPanel&lt;/code&gt;: contains input controls&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mainPanel&lt;/code&gt;: displays outputs&lt;/li&gt;
+&lt;/ul&gt;
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+### UI: Inputs (control widgets)
+
+- Wigets are web elements that users can interact with. 
+
+- The standard Shiny widgets are:
+
+&lt;center&gt;
+&lt;img src="img/widgets.png" width=75%&gt;
+
+[Widget gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
+
+---
+
+### UI: Inputs (control widgets)
+
+- Increase counter: `actionButton`, `actionLink`
+- TRUE/FALSE: `checkboxInput`
+- Date: `dateInput`, `dateRangeInput`
+- File: `fileInput`
+- Number: `numericInput`
+- Text: `textInput`, `passwordInput`
+- Select elements: `radioButtons`, `selectInput`, `sliderInput`
+- Trigger reaction: `submitButton`
+
+--
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Which widget(s) are used in the `app.R`?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+### UI: Inputs (control widgets)
+
+- Increase counter: `actionButton`, `actionLink`
+- TRUE/FALSE: `checkboxInput`
+- Date: `dateInput`, `dateRangeInput`
+- File: `fileInput`
+- Number: `numericInput`
+- Text: `textInput`, `passwordInput`
+- Select elements: `radioButtons`, `selectInput`, `sliderInput`
+- Trigger reaction: `submitButton`
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Which widget(s) are used in the `app.R`?
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&lt;code&gt;sliderInput&lt;/code&gt;
+
+&amp;emsp;
+&lt;/div&gt;
+
+---
+
+### UI: Output
+
+- The output will be updated automatically when an input widget changes: **reactivity**
+  + when an user manipulates the app, Shiny reruns parts of `server.R` to create an updated output
+  
+Types of outputs:
+  
+- Plot: `plotOutput`
+- Image: `imageOutput`
+- Text: `textOutput`
+- Code:  `verbatimTextOutput`
+- Table: `tableOutput`
+
+---
+
+### UI and server: Output
+&lt;center&gt;
+&lt;img src="img/outputs.png" width=75%&gt;
+
+---
+
+## Shiny app summary
+
+#### &lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt; **Exercise** | Create a shiny app named 'Cars' with the following requirements:
+
+1. **Layout**: sidebar layout.
+2. A **slider** in the sidebar panel with `inputId` "nrows" and `label` "Number of rows:", which controls how many rows of the data set `datasets::cars` to use in the following analysis. The minimum value is 1, maximum value is 50 and default value is 10.
+3. In the main panel, create a **scatterplot** with `x` axis 'speed' and `y` axis 'dist' on the top and a table showing the data on the bottom, using `outputId` "`carsPlot`" and "`carsTable`" respectively.
+4. Use HTML tags to format the UI: indicating an app title and your name.
+
+&lt;i class="fas fa-key"&gt;&lt;/i&gt; You can use a subset of your data in ggplot as `cars[1:input$nrows,]`
+
+
+
+  
+
+&lt;div style="background-color:#F0F0F0"&gt;
+&amp;emsp;&lt;i class="fas fa-comment-dots"&gt;&lt;/i&gt;
+Answer:
+
+&amp;emsp;
+&lt;/div&gt;
+
+#### Upload your app to [Atenea](https://atenea.upc.edu/course/section.php?id=907341)
+
+
+---
+## Shiny app summary
+
+&lt;center&gt;
+&lt;img src="img/aspect2023_10_5D16_42_22.png" width=60%&gt;
+
+---
+
+
+#### Shiny app summary
+
+
+``` r
+ui &lt;- (fluidPage(
+  titlePanel(HTML('&lt;h1&gt;Cars&lt;/h1&gt;
+        &lt;hr&gt;&lt;br&gt;
+        &lt;p&gt;Marta Coronado Zamora&lt;br&gt;')),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("nrows",
+                  "Number of rows:",
+                  min = 1, max = 50, value = 10)
+    ),
+    mainPanel(
+      plotOutput("carsPlot"), tableOutput("carsTable")
+    )
+  )
+))
+server &lt;- function(input, output) {
+  output$carsPlot &lt;- renderPlot({
+    ggplot(cars[1:input$nrows,], aes(x=speed, y=dist)) + geom_point()
+  })
+  output$carsTable &lt;- renderTable({
+    cars[1:input$nrows,]
+  })
+}
+shinyApp(ui = ui, server = server)
+```
+
+  
+  
+
+---
+
+layout: false
+class: inverse, center, middle, animated, bounceInDown
+
+### Upload your app to [Atenea](https://atenea.upc.edu/course/section.php?id=907341)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
