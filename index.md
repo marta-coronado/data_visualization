@@ -16,6 +16,7 @@ title: "Data Visualization lessons (UPC)"
 - [Basic tools for data visualization: in bioinformatics (Rmd)](/T/2/2.Rmd)
 - [Interactive and dynamic data visualization (HTML)](/T/3/3.html)
 - [Interactive and dynamic data visualization (Rmd)](/T/3/3.Rmd)
+  
 ---
 
 ## 💻 Computer practicals
