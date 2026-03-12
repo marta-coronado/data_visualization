@@ -638,7 +638,9 @@ Answer:
 
 ### UI: Inputs (control widgets)
 
-- Wigets are web elements that users can interact with. 
+## MEJORAR ESTA PARTE CON UNA APP DISTINTA Y MAS INTUITIVA DE VER LA CONEXION
+
+- Widgets are web elements that users can interact with. 
 
 - The standard Shiny widgets are:
 
