@@ -163,29 +163,6 @@ Answer:
 
 
 ---
-
-### `htmlwidgets` in `*Output`
-
-We have the output function `plotlyOutput` and its companion reactive function `renderPlotly` to add a plotly graph to a `shiny app`. What if we want to add some others?
-
-
-#### <i class="fas fa-pencil-alt"></i> **Exercise** | Make a quick search to find the corresponding output function and render function for the following `htmlwidgets`:
-- [leaflet](http://rstudio.github.io/leaflet/)
-- [dygraphs](http://rstudio.github.io/dygraphs/)
-- [networkD3](http://christophergandrud.github.io/networkD3/)
-
-<div style="background-color:#F0F0F0">
-&emsp;<i class="fas fa-comment-dots"></i>
-Answer:
-<br><br>
-leaflet: <code>leafletOutput()</code>, <code>renderLeaflet()</code><br>
-dygraphs: <code>dygraphOutput()</code>, <code>renderDygraph()</code><br>
-networkD3: <code>forceNetworkOutput()</code>, <code>renderForceNetwork()</code><br>
-
-&emsp;
-</div>
-
----
 ## Built-in interactive visualization
 
 Shiny has built-in support for interacting with static plots generated with `ggplot2`.
