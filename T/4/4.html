@@ -189,7 +189,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderText({
@@ -229,7 +230,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderText({
@@ -285,7 +287,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderPrint({
@@ -326,7 +329,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderPrint({

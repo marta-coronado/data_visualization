@@ -206,7 +206,8 @@ ui <- basicPage(
 
 server <- function(input, output) {
   output$plot1 <- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info <- renderText({
@@ -243,7 +244,8 @@ ui <- basicPage(
 
 server <- function(input, output) {
   output$plot1 <- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info <- renderText({
@@ -296,7 +298,8 @@ ui <- basicPage(
 
 server <- function(input, output) {
   output$plot1 <- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info <- renderPrint({
@@ -335,7 +338,8 @@ ui <- basicPage(
 
 server <- function(input, output) {
   output$plot1 <- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info <- renderPrint({

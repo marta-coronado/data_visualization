@@ -75,7 +75,7 @@ class: animated, fadeIn
   + `htmlwidgets` as `*Output`
   + Built-in interactive visualization `plotOutput` options: `click`, `hover`, `brush`, `nearPoints`, `brushedPoints`
 - Sharing your apps and reports
-  + shiny.io
+  + shinyapps.io
   + GitHub pages
 
 ---
@@ -212,7 +212,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderText({
@@ -252,7 +253,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderText({
@@ -308,7 +310,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderPrint({
@@ -349,7 +352,8 @@ ui &lt;- basicPage(
 
 server &lt;- function(input, output) {
   output$plot1 &lt;- renderPlot({
-    plot(mtcars$wt, mtcars$mpg)
+    #plot(mtcars$wt, mtcars$mpg)
+    ggplot(mtcars, aes(wt,mpg)) + geom_point()
   })
 
   output$info &lt;- renderPrint({
@@ -529,7 +533,7 @@ Access your report:
 
 To practice, you can:
 - Share a **GitHub link** to a practical done in class (from P1-P3) 
-- Share your `Cars` shiny app using **shiny.io**
+- Share your `Cars` shiny app using **shinyapps.io**
 
 --
 
