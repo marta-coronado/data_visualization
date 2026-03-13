@@ -17,7 +17,8 @@ title: "Data Visualization lessons (UPC)"
 - [Interactive and dynamic data visualization (HTML)](/T/3/3.html)
 - [Interactive and dynamic data visualization (Rmd)](/T/3/3.Rmd)
 - [Interactivity with `shiny` (HTML)](/T/4/4.html)
-- [Interactivity with `shiny` (Rmd)](/T/4/4.Rmd)  
+- [Interactivity with `shiny` (Rmd)](/T/4/4.Rmd)
+
 ---
 
 ## 💻 Computer practicals
