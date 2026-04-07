@@ -39,8 +39,7 @@ title: "Data Visualization lessons (UPC)"
 - [Practical 4: Interactive and dynamic visualization: first steps with `shiny`](P/4/P4_exercises.html)
 - [Slides for Practical 4](P/4/P4_slides.html)
   
-- [Practical 5: `Shiny` interactive visualizations](P/5/P5_exercises.html)
-- [Practical 5: Solutions](P/5/P5_exercises_sol.html)
-- [Slides for Practical 5](P/5/P5_slides.html)
+- [Practical 5: `Shiny` interactive visualizations](P/5/P5_exercises.Rmd)
+- [Practical 5: Solutions](P/5/P5_exercises_sol.Rmd)
   
 ✍️ *Last update: {{ site.time | date: "%d-%m-%Y" }}*
