@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>P5 | Interactive plots in Shiny</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Marta Coronado Zamora and Miriam Merenciano" />
+    <meta name="date" content="2026-03-19" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rutgers.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# <strong>P5</strong> | Interactive plots in Shiny
+]
+.subtitle[
+## <code>Shiny</code> interactive visualizations
+]
+.author[
+### <b>Marta Coronado Zamora and Miriam Merenciano</b>
+]
+.date[
+### 19 March 2026
+]
+
+---
+
+
+
+class: center, middle, animated, bounceInDown
+
+&lt;style&gt;
+.title-slide {
+  background-image: url(https://fibvisiona.com/sites/default/files/inline-images/logo-upc.png);
+  background-size: 300px;
+}
+&lt;/style&gt;
+
+
+# Keep in touch
+
+| Miriam Merenciano |
+|:-:|
+| &lt;a href="mailto:miriam.merenciano@uab.cat"&gt;&lt;i class="fa fa-paper-plane fa-fw"&gt;&lt;/i&gt; miriam.merenciano@uab.cat &lt;/a&gt; | 
+|  &lt;a href="https://lbbe.univ-lyon1.fr/fr/"&gt;&lt;i class="fa fa-map-marker fa-fw"&gt;&lt;/i&gt;&amp;nbsp; Department of Genetics and Microbiology (UAB) &lt;/a&gt; |
+
+---
+layout: true
+class: animated, fadeIn
+
+---
+# Session content
+
+- Solving doubts
+- Exercise: Interactive and dynamic visualization: `Shiny` interactive visualizations (`P5_exercises.Rmd`)
+- Finishing group project
+
+---
+
+# Practice &lt;i class="fas fa-cogs"&gt;&lt;/i&gt;
+## Interactive and dynamic visualization: `Shiny` interactive visualizations
+
+- Open the document `P5_exercises.Rmd` in RStudio and complete the exercises.
+- Upload the completed document to [Atenea](https://atenea.upc.edu/course/view.php?id=95546) at the end of the session.
+
+---
+
+# Project
+
+## Group project
+
+### Parts
+
+- **Part A** | Understand the origin of our data set and the meaning of the variables
+- **Part B** | Visually describe our data set
+- **Part C** | Add interaction to 
+
+---
+
+# Project
+
+## Group project
+
+__Part A__
+
+- Describe your data set:
+    + Where and why was the information collected?
+    + Which is the meaning of each variable?
+    + Do the variables have unit? Which one?
+    + Does the data set have a long format?
+
+---
+
+# Project
+
+## Group project
+
+__Part B__
+
+
+- Write the code to:
+    + Read it into R
+    + Reshape the data if necessary into long format
+    + Check the variable classes and update them if necessary
+
+
+---
+# Project
+
+## Group project
+
+__Part B__
+
+- Write the code to:
+    + Read it into R
+    + Reshape the data if necessary into long format
+    + Check the variable classes and update them if necessary
+- Explore your data using `ggplot2` graphics
+    + Represent the __distribution of the variables__: pick one continuous variable and one discrete variable and use histograms or bar graphs to show their distribution
+    + __Summarize the data__: use one geom to summarize data (e.g.: `geom_smooth`, boxplots, ...) of two variables
+- Explain your data with graphics and text
+    + Choose the __three graphics__ that better describe your data
+    + __Customize__ and __annotate__ them
+    + Accompany the figures with your __hypothesis__ and/or __interpretation__
+
+---
+# Project
+
+## Group project
+
+__Part C__
+
+- Make your figures interactive in three different ways (one for each figure):
+    + Make an interactive visualization using some `htmlwidget`
+    + Add __interactive controls__ with `shiny` input widgets to show some useful information (eg. focus on a subset, add a summary layer...)
+    + Make an __interactive visualization__ using `shiny` built-in interactive options in order to print the information of the individual observations
+- Decide which figure would benefit from each type of interactivity and justify your choice
+
+--
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

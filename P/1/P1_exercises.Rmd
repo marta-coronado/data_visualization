@@ -1,14 +1,3 @@
----
-title: "**Data visualization in R**<br><font color='#A8A8A8' size='5'>First steps with `ggplot2`</font><img src='img/upc.png' style='position:absolute;top:0px;left:0px;' width='20%'/>"
-author: "Your Name"
-date: "19 February 2026"
-output:
-  prettydoc::html_pretty:
-    theme: leonids 
-    highlight: github
-    self_contained: TRUE
----
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.width = 6, fig.height = 4)
 # install.packages("prettydoc")
